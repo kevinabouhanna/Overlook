@@ -21,7 +21,8 @@ const Services = () => {
         "Qualification and Screening",
         "Ongoing Support and Relationship Building"
       ],
-      link: "/services/sales-hiring"
+      link: "/services/sales-hiring",
+      image: "/images/sales-hiring.jpg"
     },
     {
       id: 2,
@@ -33,7 +34,8 @@ const Services = () => {
         "Ongoing Coaching and Feedback",
         "Measurable Outcomes and KPIs"
       ],
-      link: "/services/sales-training"
+      link: "/services/sales-training",
+      image: "/images/sales-training.jpg"
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ const Services = () => {
         "Sales Funnel Optimization",
         "Technology and Tools Integration"
       ],
-      link: "/services/sales-process"
+      link: "/services/sales-process",
+      image: "/images/sales-process.jpg"
     },
     {
       id: 4,
@@ -57,7 +60,8 @@ const Services = () => {
         "Sales Reporting and Dashboards",
         "Data-Driven Decision Making"
       ],
-      link: "/services/performance-metrics"
+      link: "/services/performance-metrics",
+      image: "/images/performance-metrics.jpg"
     }
   ];
 
@@ -66,8 +70,15 @@ const Services = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="pt-32 pb-20 bg-gray-50 relative">
+        <div className="absolute inset-0 z-0 opacity-15">
+          <img 
+            src="/images/services-bg.jpg" 
+            alt="Sales services background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
@@ -92,11 +103,20 @@ const Services = () => {
             {services.map((service, index) => (
               <div 
                 key={service.id} 
-                className="animate-on-scroll bg-gray-50 rounded-lg shadow-sm overflow-hidden service-card"
+                className="animate-on-scroll service-card overflow-hidden rounded-lg shadow-sm"
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <div className="relative service-image-container">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="service-image h-48"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70"></div>
+                  <h3 className="absolute bottom-0 left-0 text-2xl font-bold text-white p-6">{service.title}</h3>
+                </div>
+                
+                <div className="p-8 bg-white">
                   <p className="text-gray-700 mb-6">{service.description}</p>
                   
                   <h4 className="font-bold mb-3">Key Components:</h4>

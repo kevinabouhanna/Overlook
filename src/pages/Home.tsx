@@ -44,15 +44,23 @@ const Home = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="min-h-screen flex items-center pt-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section ref={heroRef} className="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero-sales-team.jpg" 
+            alt="Professional sales team" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 hero-title">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 hero-title text-white">
               <span className="inline-block">Build.</span>{" "}
               <span className="inline-block">Trust.</span>{" "}
               <span className="inline-block">Hire.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 hero-subtitle">
+            <p className="text-xl md:text-2xl text-gray-200 hero-subtitle">
               Overlook specializes in sales consultancy and hiring, helping businesses optimize sales strategies and build high-performing teams for sustainable growth.
             </p>
           </div>
@@ -106,61 +114,93 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Link to="/services/sales-hiring" className="animate-on-scroll service-card group">
-              <div className="bg-gray-50 p-8 rounded-lg shadow-sm h-full transition-all duration-300 hover:shadow-md">
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-black transition-colors">Sales Hiring</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                  <li>Understanding Client Needs</li>
-                  <li>Comprehensive Candidate Sourcing</li>
-                  <li>Qualification and Screening</li>
-                  <li>Ongoing Support</li>
-                </ul>
-                <div className="text-black font-semibold mt-auto inline-block">
-                  Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+              <div className="service-card-overlay h-full">
+                <img 
+                  src="/images/sales-hiring.jpg" 
+                  alt="Sales Hiring" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="gradient-overlay"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-white transition-colors">Sales Hiring</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-200 mb-6">
+                    <li>Understanding Client Needs</li>
+                    <li>Comprehensive Candidate Sourcing</li>
+                    <li>Qualification and Screening</li>
+                    <li>Ongoing Support</li>
+                  </ul>
+                  <div className="text-white font-semibold mt-auto inline-block">
+                    Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+                  </div>
                 </div>
               </div>
             </Link>
             
             <Link to="/services/sales-training" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.1s" }}>
-              <div className="bg-gray-50 p-8 rounded-lg shadow-sm h-full transition-all duration-300 hover:shadow-md">
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-black transition-colors">Sales Training & Coaching</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                  <li>Customized Training Programs</li>
-                  <li>Practical Skills Development</li>
-                  <li>Ongoing Coaching and Feedback</li>
-                  <li>Measurable Outcomes and KPIs</li>
-                </ul>
-                <div className="text-black font-semibold mt-auto inline-block">
-                  Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+              <div className="service-card-overlay h-full">
+                <img 
+                  src="/images/sales-training.jpg" 
+                  alt="Sales Training" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="gradient-overlay"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-white transition-colors">Sales Training & Coaching</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-200 mb-6">
+                    <li>Customized Training Programs</li>
+                    <li>Practical Skills Development</li>
+                    <li>Ongoing Coaching and Feedback</li>
+                    <li>Measurable Outcomes and KPIs</li>
+                  </ul>
+                  <div className="text-white font-semibold mt-auto inline-block">
+                    Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+                  </div>
                 </div>
               </div>
             </Link>
             
             <Link to="/services/sales-process" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.2s" }}>
-              <div className="bg-gray-50 p-8 rounded-lg shadow-sm h-full transition-all duration-300 hover:shadow-md">
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-black transition-colors">Sales Process & Strategy</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                  <li>Assessment of Current Sales Processes</li>
-                  <li>Customized Sales Strategy Development</li>
-                  <li>Sales Funnel Optimization</li>
-                  <li>Technology and Tools Integration</li>
-                </ul>
-                <div className="text-black font-semibold mt-auto inline-block">
-                  Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+              <div className="service-card-overlay h-full">
+                <img 
+                  src="/images/sales-process.jpg" 
+                  alt="Sales Process" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="gradient-overlay"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-white transition-colors">Sales Process & Strategy</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-200 mb-6">
+                    <li>Assessment of Current Sales Processes</li>
+                    <li>Customized Sales Strategy Development</li>
+                    <li>Sales Funnel Optimization</li>
+                    <li>Technology and Tools Integration</li>
+                  </ul>
+                  <div className="text-white font-semibold mt-auto inline-block">
+                    Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+                  </div>
                 </div>
               </div>
             </Link>
             
             <Link to="/services/performance-metrics" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.3s" }}>
-              <div className="bg-gray-50 p-8 rounded-lg shadow-sm h-full transition-all duration-300 hover:shadow-md">
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-black transition-colors">Performance Metrics & Analytics</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
-                  <li>Define Key Performance Indicators</li>
-                  <li>Trend Analysis and Forecasting</li>
-                  <li>Sales Reporting and Dashboards</li>
-                  <li>Data-Driven Decision Making</li>
-                </ul>
-                <div className="text-black font-semibold mt-auto inline-block">
-                  Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+              <div className="service-card-overlay h-full">
+                <img 
+                  src="/images/performance-metrics.jpg" 
+                  alt="Performance Metrics" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="gradient-overlay"></div>
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-white transition-colors">Performance Metrics & Analytics</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-200 mb-6">
+                    <li>Define Key Performance Indicators</li>
+                    <li>Trend Analysis and Forecasting</li>
+                    <li>Sales Reporting and Dashboards</li>
+                    <li>Data-Driven Decision Making</li>
+                  </ul>
+                  <div className="text-white font-semibold mt-auto inline-block">
+                    Learn more <span className="ml-2 transition-transform group-hover:translate-x-2 inline-block">→</span>
+                  </div>
                 </div>
               </div>
             </Link>

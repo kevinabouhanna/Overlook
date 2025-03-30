@@ -106,3 +106,84 @@
   transform: translateY(100%);
   opacity: 0;
 }
+
+/* Glassmorphism styles */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card-overlay {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.service-card-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.service-card-overlay:hover::before {
+  opacity: 0.8;
+}
+
+.service-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-image-container {
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.service-image-container:hover .service-image {
+  transform: scale(1.05);
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
+.hero-image-overlay {
+  position: relative;
+}
+
+.hero-image-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}

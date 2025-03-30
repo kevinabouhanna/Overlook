@@ -14,8 +14,15 @@ const SalesHiring = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="pt-32 pb-20 bg-gray-50 relative">
+        <div className="absolute inset-0 z-0 opacity-25">
+          <img 
+            src="/images/sales-hiring-hero.jpg" 
+            alt="Sales hiring" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Sales Hiring</h1>
             <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
@@ -44,8 +51,12 @@ const SalesHiring = () => {
               </p>
             </div>
             
-            <div className="bg-gray-100 h-96 animate-on-scroll flex items-center justify-center">
-              <p className="text-2xl font-bold text-center px-6">SALES HIRING</p>
+            <div className="animate-on-scroll service-image-container rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/images/sales-hiring-detail.jpg" 
+                alt="Sales hiring professional" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ const Terms = () => {
               <p>In these Terms:</p>
               <ul className="list-disc ml-8 mt-4 mb-4">
                 <li>"Overlook," "we," "us," or "our" refers to Overlook Consultancy.</li>
-                <li>"Website" refers to the website operated by Overlook at www.overlookconsulting.com.</li>
+                <li>"Website" refers to the website operated by Overlook at www.overlook-sales.com.</li>
                 <li>"Services" refers to all services offered by Overlook, including sales consultancy, hiring, training, process optimization, and analytics services.</li>
                 <li>"You" or "your" refers to the individual or entity accessing the Website or using the Services.</li>
               </ul>
@@ -89,7 +89,7 @@ const Terms = () => {
               
               <h2 className="text-2xl font-bold mt-8 mb-4">9. Governing Law</h2>
               <p>
-                These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions. Any legal action or proceeding arising out of or relating to these Terms shall be brought exclusively in the federal or state courts located in New York County, New York.
+                These Terms shall be governed by and construed in accordance with the laws of the State of Beirut, without regard to its conflict of law provisions. Any legal action or proceeding arising out of or relating to these Terms shall be brought exclusively in the federal or state courts located in Beirut County, Beirut.
               </p>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">10. Changes to These Terms</h2>
@@ -103,10 +103,10 @@ const Terms = () => {
               </p>
               <p className="mt-4">
                 Overlook Consultancy<br />
-                123 Business Avenue<br />
-                Suite 456<br />
-                New York, NY 10001<br />
-                Email: legal@overlookconsulting.com
+                New Rawda<br />
+                150<br />
+                Beirut, 5-12<br />
+                Email: legal@overlook-sales.com
               </p>
             </div>
           </div>

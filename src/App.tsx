@@ -1,23 +1,24 @@
-
+import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from '@/components/ScrollToTop';
 
 // Pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import SalesHiring from "./pages/services/SalesHiring";
-import SalesTraining from "./pages/services/SalesTraining";
-import SalesProcess from "./pages/services/SalesProcess";
-import PerformanceMetrics from "./pages/services/PerformanceMetrics";
-import Contact from "./pages/Contact";
-import Cookies from "./pages/legal/Cookies";
-import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
-import Terms from "./pages/legal/Terms";
-import NotFound from "./pages/NotFound";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Services from "@/pages/Services";
+import SalesHiring from "@/pages/services/SalesHiring";
+import SalesTraining from "@/pages/services/SalesTraining";
+import SalesProcess from "@/pages/services/SalesProcess";
+import PerformanceMetrics from "@/pages/services/PerformanceMetrics";
+import Contact from "@/pages/Contact";
+import Cookies from "@/pages/legal/Cookies";
+import PrivacyPolicy from "@/pages/legal/PrivacyPolicy";
+import Terms from "@/pages/legal/Terms";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -41,7 +43,7 @@ const App = () => (
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </TooltipProvider>
   </QueryClientProvider>
 );

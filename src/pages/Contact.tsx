@@ -65,20 +65,20 @@ const Contact = () => {
               <div className="space-y-6 mb-8">
                 <div>
                   <h3 className="text-xl font-bold mb-2">Email</h3>
-                  <p className="text-gray-700">info@overlookconsulting.com</p>
+                  <p className="text-gray-700">info@overlook-sales.com</p>
                 </div>
                 
                 <div>
                   <h3 className="text-xl font-bold mb-2">Phone</h3>
-                  <p className="text-gray-700">+1 (555) 123-4567</p>
+                  <p className="text-gray-700">+961 70 112 317</p>
                 </div>
                 
                 <div>
                   <h3 className="text-xl font-bold mb-2">Office</h3>
                   <p className="text-gray-700">
-                    123 Business Avenue<br />
-                    Suite 456<br />
-                    New York, NY 10001
+                    New Rawda<br />
+                    150<br />
+                    Beirut, 5-12
                   </p>
                 </div>
               </div>

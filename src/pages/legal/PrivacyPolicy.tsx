@@ -117,10 +117,10 @@ const PrivacyPolicy = () => {
               </p>
               <p className="mt-4">
                 Overlook Consultancy<br />
-                123 Business Avenue<br />
-                Suite 456<br />
-                New York, NY 10001<br />
-                Email: privacy@overlookconsulting.com
+                New Rawda<br />
+                150<br />
+                Beirut, 5-12<br />
+                Email: privacy@overlook-sales.com
               </p>
             </div>
           </div>

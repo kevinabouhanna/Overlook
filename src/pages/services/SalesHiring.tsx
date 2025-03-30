@@ -17,7 +17,7 @@ const SalesHiring = () => {
       <section className="pt-32 pb-20 bg-gray-50 relative">
         <div className="absolute inset-0 z-0 opacity-25">
           <img 
-            src="/images/sales-hiring-hero.jpg" 
+            src="https://images.unsplash.com/photo-1566054757965-8c4085344c96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" 
             alt="Sales hiring" 
             className="w-full h-full object-cover"
           />
@@ -53,7 +53,7 @@ const SalesHiring = () => {
             
             <div className="animate-on-scroll service-image-container rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/images/sales-hiring-detail.jpg" 
+                src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                 alt="Sales hiring professional" 
                 className="w-full h-full object-cover"
               />

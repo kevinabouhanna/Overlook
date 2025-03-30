@@ -17,7 +17,7 @@ const SalesTraining = () => {
       <section className="pt-32 pb-20 bg-gray-50 relative">
         <div className="absolute inset-0 z-0 opacity-25">
           <img 
-            src="/images/sales-training-hero.jpg" 
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
             alt="Sales training session" 
             className="w-full h-full object-cover"
           />
@@ -53,7 +53,7 @@ const SalesTraining = () => {
             
             <div className="animate-on-scroll service-image-container rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/images/sales-training-detail.jpg" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                 alt="Sales training session" 
                 className="w-full h-full object-cover"
               />

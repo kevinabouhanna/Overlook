@@ -22,7 +22,7 @@ const Services = () => {
         "Ongoing Support and Relationship Building"
       ],
       link: "/services/sales-hiring",
-      image: "/images/sales-hiring.jpg"
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Services = () => {
         "Measurable Outcomes and KPIs"
       ],
       link: "/services/sales-training",
-      image: "/images/sales-training.jpg"
+      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const Services = () => {
         "Technology and Tools Integration"
       ],
       link: "/services/sales-process",
-      image: "/images/sales-process.jpg"
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ const Services = () => {
         "Data-Driven Decision Making"
       ],
       link: "/services/performance-metrics",
-      image: "/images/performance-metrics.jpg"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ];
 
@@ -73,7 +73,7 @@ const Services = () => {
       <section className="pt-32 pb-20 bg-gray-50 relative">
         <div className="absolute inset-0 z-0 opacity-15">
           <img 
-            src="/images/services-bg.jpg" 
+            src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
             alt="Sales services background" 
             className="w-full h-full object-cover"
           />

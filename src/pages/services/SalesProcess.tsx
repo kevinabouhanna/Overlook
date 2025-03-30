@@ -17,7 +17,7 @@ const SalesProcess = () => {
       <section className="pt-32 pb-20 bg-gray-50 relative">
         <div className="absolute inset-0 z-0 opacity-25">
           <img 
-            src="/images/sales-process-hero.jpg" 
+            src="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
             alt="Sales process planning" 
             className="w-full h-full object-cover"
           />
@@ -53,7 +53,7 @@ const SalesProcess = () => {
             
             <div className="animate-on-scroll service-image-container rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/images/sales-process-detail.jpg" 
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                 alt="Sales process strategy session" 
                 className="w-full h-full object-cover"
               />

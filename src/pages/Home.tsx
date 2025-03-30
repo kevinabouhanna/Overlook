@@ -47,7 +47,7 @@ const Home = () => {
       <section ref={heroRef} className="min-h-screen flex items-center pt-16 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero-sales-team.jpg" 
+            src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
             alt="Professional sales team" 
             className="w-full h-full object-cover"
           />
@@ -116,7 +116,7 @@ const Home = () => {
             <Link to="/services/sales-hiring" className="animate-on-scroll service-card group">
               <div className="service-card-overlay h-full">
                 <img 
-                  src="/images/sales-hiring.jpg" 
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Sales Hiring" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -139,7 +139,7 @@ const Home = () => {
             <Link to="/services/sales-training" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.1s" }}>
               <div className="service-card-overlay h-full">
                 <img 
-                  src="/images/sales-training.jpg" 
+                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
                   alt="Sales Training" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -162,7 +162,7 @@ const Home = () => {
             <Link to="/services/sales-process" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.2s" }}>
               <div className="service-card-overlay h-full">
                 <img 
-                  src="/images/sales-process.jpg" 
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Sales Process" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -185,7 +185,7 @@ const Home = () => {
             <Link to="/services/performance-metrics" className="animate-on-scroll service-card group" style={{ transitionDelay: "0.3s" }}>
               <div className="service-card-overlay h-full">
                 <img 
-                  src="/images/performance-metrics.jpg" 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                   alt="Performance Metrics" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />

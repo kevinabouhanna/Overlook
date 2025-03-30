@@ -17,7 +17,7 @@ const PerformanceMetrics = () => {
       <section className="pt-32 pb-20 bg-gray-50 relative">
         <div className="absolute inset-0 z-0 opacity-25">
           <img 
-            src="/images/performance-metrics-hero.jpg" 
+            src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
             alt="Performance metrics dashboard" 
             className="w-full h-full object-cover"
           />
@@ -53,7 +53,7 @@ const PerformanceMetrics = () => {
             
             <div className="animate-on-scroll service-image-container rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/images/performance-metrics-detail.jpg" 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
                 alt="Performance metrics dashboard analysis" 
                 className="w-full h-full object-cover"
               />

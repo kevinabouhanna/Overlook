@@ -1,5 +1,8 @@
 
-import React, { useRef, useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useGSAPAnimation } from '@/hooks/useGSAPAnimation';
@@ -7,31 +10,72 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+
+const formSchema = z.object({
+  firstName: z.string().min(2, 'First name must be at least 2 characters'),
+  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  company: z.string().optional(),
+  service: z.string().min(1, 'Please select a service'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const animationRef = useGSAPAnimation();
-  const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      
-      if (formRef.current) {
-        formRef.current.reset();
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      company: '',
+      service: '',
+      message: '',
+    },
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...data
+        }).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
       }
+
+      form.reset();
       
       toast({
         title: "Message Sent",
         description: "We've received your message and will get back to you shortly.",
         duration: 5000,
       });
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
   };
 
   return (
@@ -95,84 +139,137 @@ const Contact = () => {
             </div>
             
             <div className="animate-on-scroll">
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-8 rounded-lg">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="firstName" className="block font-medium text-gray-700">First Name</label>
-                    <Input 
-                      id="firstName" 
-                      name="firstName" 
-                      required 
-                      className="w-full bg-white"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <label htmlFor="lastName" className="block font-medium text-gray-700">Last Name</label>
-                    <Input 
-                      id="lastName" 
-                      name="lastName" 
-                      required 
-                      className="w-full bg-white"
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block font-medium text-gray-700">Email Address</label>
-                  <Input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    required 
-                    className="w-full bg-white"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="company" className="block font-medium text-gray-700">Company Name</label>
-                  <Input 
-                    id="company" 
-                    name="company" 
-                    className="w-full bg-white"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="service" className="block font-medium text-gray-700">Service of Interest</label>
-                  <select 
-                    id="service" 
-                    name="service" 
-                    className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="Sales Hiring">Sales Hiring</option>
-                    <option value="Sales Training">Sales Training & Coaching</option>
-                    <option value="Sales Process">Sales Process & Strategy</option>
-                    <option value="Performance Metrics">Performance Metrics & Analytics</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="message" className="block font-medium text-gray-700">Your Message</label>
-                  <Textarea 
-                    id="message" 
-                    name="message" 
-                    rows={5} 
-                    required 
-                    className="w-full bg-white"
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full bg-black text-white hover:bg-gray-800 transition-colors"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
+              {/* Hidden form for Netlify */}
+              <form name="contact" data-netlify="true" hidden>
+                <input type="text" name="firstName" />
+                <input type="text" name="lastName" />
+                <input type="email" name="email" />
+                <input type="text" name="company" />
+                <input type="text" name="service" />
+                <textarea name="message"></textarea>
               </form>
+
+              <Form {...form}>
+                <form 
+                  onSubmit={form.handleSubmit(onSubmit)} 
+                  className="space-y-6 bg-gray-50 p-8 rounded-lg"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>First Name</FormLabel>
+                          <FormControl>
+                            <Input {...field} name="firstName" className="w-full bg-white" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Last Name</FormLabel>
+                          <FormControl>
+                            <Input {...field} name="lastName" className="w-full bg-white" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email Address</FormLabel>
+                        <FormControl>
+                          <Input {...field} type="email" name="email" className="w-full bg-white" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="company"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Company Name</FormLabel>
+                        <FormControl>
+                          <Input {...field} name="company" className="w-full bg-white" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="service"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Service of Interest</FormLabel>
+                        <FormControl>
+                          <select 
+                            {...field}
+                            name="service"
+                            className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                          >
+                            <option value="">Select a service</option>
+                            <option value="Sales Hiring">Sales Hiring</option>
+                            <option value="Sales Training">Sales Training & Coaching</option>
+                            <option value="Sales Process">Sales Process & Strategy</option>
+                            <option value="Performance Metrics">Performance Metrics & Analytics</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your Message</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            {...field}
+                            name="message"
+                            rows={5}
+                            className="w-full bg-white"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-black text-white hover:bg-gray-800 transition-colors"
+                    disabled={form.formState.isSubmitting}
+                  >
+                    {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
         </div>

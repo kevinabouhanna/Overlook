@@ -28,13 +28,20 @@ const Navbar = () => {
       gsap.fromTo(
         '.mobile-menu',
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.21, ease: "power2.out" }
       );
       
       gsap.fromTo(
         '.mobile-menu-item',
         { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: 0.3, stagger: 0.1, ease: "power2.out", delay: 0.2 }
+        { 
+          opacity: 1, 
+          x: 0, 
+          duration: 0.21, 
+          stagger: 0.07, 
+          ease: "power2.out", 
+          delay: 0.14
+        }
       );
     }
   }, [isMenuOpen]);

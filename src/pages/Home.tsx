@@ -47,20 +47,20 @@ const Home = () => {
       <section ref={heroRef} className="min-h-screen flex items-center pt-16 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Professional sales team" 
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Modern office space with natural light" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 hero-title text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 hero-title text-black">
               <span className="inline-block">Build.</span>{" "}
               <span className="inline-block">Trust.</span>{" "}
               <span className="inline-block">Hire.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 hero-subtitle">
+            <p className="text-xl md:text-2xl text-gray-700 hero-subtitle">
               Overlook specializes in sales consultancy and hiring, helping businesses optimize sales strategies and build high-performing teams for sustainable growth.
             </p>
           </div>

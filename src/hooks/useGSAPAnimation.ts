@@ -18,12 +18,12 @@ export const useGSAPAnimation = () => {
           element,
           { 
             opacity: 0,
-            y: 50 
+            y: 20 
           },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.3,
             ease: "power2.out",
             scrollTrigger: {
               trigger: element,
@@ -43,7 +43,7 @@ export const useGSAPAnimation = () => {
         gsap.to(spans, {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.3,
           stagger: 0.1,
           ease: "power2.out",
           scrollTrigger: {
@@ -74,7 +74,7 @@ export const useHeroAnimation = () => {
         { 
           y: 0, 
           opacity: 1, 
-          duration: 0.8, 
+          duration: 0.3,
           stagger: 0.1,
           ease: "power2.out" 
         }
@@ -86,10 +86,10 @@ export const useHeroAnimation = () => {
         { 
           opacity: 1, 
           y: 0, 
-          duration: 0.6,
+          duration: 0.3,
           ease: "power2.out" 
         },
-        "-=0.4"
+        "-=0.3"
       );
       
       tl.fromTo(
@@ -98,11 +98,11 @@ export const useHeroAnimation = () => {
         { 
           opacity: 1, 
           y: 0, 
-          duration: 0.4, 
+          duration: 0.3,
           stagger: 0.1,
           ease: "power2.out" 
         },
-        "-=0.6"
+        "-=0.3"
       );
     }, heroRef);
 

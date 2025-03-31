@@ -147,7 +147,7 @@ const About = () => {
               Let's discuss how Overlook can help you build, train, and optimize your sales team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black transition-colors">
+              <Button asChild variant="outline" className="border-2 border-white text-black hover:bg-white hover:text-black transition-colors">
                 <Link to="/contact">Contact Us</Link>
               </Button>
               <Button asChild className="bg-white text-black hover:bg-gray-200 transition-colors">

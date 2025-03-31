@@ -202,7 +202,7 @@ const SalesTraining = () => {
               >
                 Book an Appointment
               </Button>
-              <Button asChild variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black transition-colors">
+              <Button asChild variant="outline" className="border-2 border-white text-black hover:bg-white hover:text-black transition-colors">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

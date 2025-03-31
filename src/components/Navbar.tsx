@@ -48,7 +48,7 @@ const Navbar = () => {
 
   const scrollToCalendar = () => {
     // Open Google Calendar in a new tab
-    window.open('https://calendar.google.com/calendar/u/0/appointments/schedules', '_blank');
+    window.open('https://calendar.app.google/dUrQAfTgvreDSuyb9', '_blank');
   };
 
   return (

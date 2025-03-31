@@ -86,7 +86,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl font-bold mb-4">Schedule a Call</h3>
                 <Button 
-                  onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules', '_blank')}
+                  onClick={() => window.open('https://calendar.app.google/dUrQAfTgvreDSuyb9', '_blank')}
                   className="bg-black text-white hover:bg-gray-800 transition-colors"
                 >
                   Book an Appointment

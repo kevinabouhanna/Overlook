@@ -181,7 +181,7 @@ const Services = () => {
               Schedule a consultation to discuss how our services can help your business grow.
             </p>
             <Button 
-              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules', '_blank')}
+              onClick={() => window.open('https://calendar.app.google/dUrQAfTgvreDSuyb9', '_blank')}
               className="bg-white text-black hover:bg-gray-200 transition-colors"
             >
               Book an Appointment

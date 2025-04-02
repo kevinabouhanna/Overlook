@@ -56,7 +56,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="animate-on-scroll">
+    <div>
       <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
 
       {formStatus.submitted ? (

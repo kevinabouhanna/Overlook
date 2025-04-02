@@ -95,11 +95,7 @@ This site is deployed on Netlify with the following configuration:
 
 ## �🔮 Future Improvements
 
-- Add a blog section for content marketing
+- Replace animation with Framer Motion
 - Implement image optimization with Astro's built-in tools
 - Add structured data (JSON-LD) for services
 - Implement more comprehensive testing
-
-## 📝 License
-
-This project is free to use.

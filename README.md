@@ -69,7 +69,7 @@ This site is deployed on Netlify with the following configuration:
 
 - **Build Command**: `npm run build`
 - **Publish Directory**: `dist`
-- **Branch**: astro-migration
+- **Branch**: main
 
 ## 🧩 Web Architecture
 

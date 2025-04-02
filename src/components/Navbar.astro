@@ -1,0 +1,169 @@
+---
+// Define the navigation links
+const navLinks = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/services', text: 'Services' },
+  { href: '/contact', text: 'Contact' }
+];
+
+// Get the current path to highlight the active link
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-black">Overlook</a>
+      </div>
+      <div class="nav-links" style="display: flex;">
+        <div class="ml-10 flex items-center space-x-4">
+          {navLinks.map(link => {
+            const isActive = currentPath === link.href ||
+                          (link.href !== '/' && currentPath.startsWith(link.href));
+            return (
+              <a
+                href={link.href}
+                class={`px-3 py-2 rounded-md text-base font-medium ${isActive ? 'text-black font-semibold' : 'text-gray-700 hover:text-black'}`}
+              >
+                {link.text}
+              </a>
+            );
+          })}
+          <a
+            href="/contact"
+            class="bg-black text-white px-4 py-2 rounded-md text-base font-medium hover:bg-gray-800"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+      <div class="mobile-menu-button" style="display: none;">
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="text-gray-700 hover:text-black"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu, hidden by default -->
+    <div id="mobile-menu" class="mobile-menu" style="display: none; transition: all 0.3s ease-in-out; max-height: 0; overflow: hidden;">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        {navLinks.map(link => {
+          const isActive = currentPath === link.href ||
+                        (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`block px-3 py-2 rounded-md text-base font-medium ${isActive ? 'text-black font-semibold' : 'text-gray-700 hover:text-black'}`}
+            >
+              {link.text}
+            </a>
+          );
+        })}
+        <a
+          href="/contact"
+          class="block px-3 py-2 rounded-md text-base font-medium bg-black text-white hover:bg-gray-800 mt-4"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Add padding to the top of the page to account for the fixed navbar -->
+<div class="h-16"></div>
+
+<style>
+  /* Responsive styles for the navbar */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none !important;
+    }
+
+    .mobile-menu-button {
+      display: block !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .nav-links {
+      display: flex !important;
+    }
+
+    .mobile-menu-button {
+      display: none !important;
+    }
+
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        // Toggle the mobile menu
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', (!expanded).toString());
+
+        if (expanded) {
+          // Hide the menu
+          mobileMenu.style.maxHeight = '0';
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300); // Match the duration in the CSS
+        } else {
+          // Show the menu
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        }
+
+        // Change the icon based on the state
+        const svg = mobileMenuButton.querySelector('svg');
+        if (svg) {
+          if (expanded) {
+            // Show the menu icon
+            svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+          } else {
+            // Show the close icon
+            svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+          }
+        }
+      });
+
+      // Close the mobile menu when clicking outside
+      document.addEventListener('click', (event) => {
+        const target = event.target as Node;
+        if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          mobileMenu.style.maxHeight = '0';
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 300);
+
+          // Reset the icon
+          const svg = mobileMenuButton.querySelector('svg');
+          if (svg) {
+            svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+          }
+        }
+      });
+    }
+  });
+</script>

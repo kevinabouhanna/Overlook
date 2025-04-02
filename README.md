@@ -1,69 +1,90 @@
-# Welcome to your Lovable project
+# Overlook Sales Consulting Website
 
-## Project info
+A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. This project was migrated from React to Astro to improve performance, SEO, and maintainability.
 
-**URL**: https://lovable.dev/projects/61da31ae-64e4-4cdd-b559-52480bb82ce1
+## 🚀 Tech Stack
 
-## How can I edit this code?
+- **Framework**: [Astro](https://astro.build) (migrated from React)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **UI Components**: Custom components with [shadcn/ui](https://ui.shadcn.com) integration
+- **Deployment**: [Netlify](https://netlify.com)
 
-There are several ways of editing your application.
+## 📂 Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/61da31ae-64e4-4cdd-b559-52480bb82ce1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```text
+/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...          # Other components (Navbar, Footer, etc.)
+│   ├── data/            # Data files (services.js, etc.)
+│   ├── layouts/         # Layout components
+│   │   └── MainLayout.astro
+│   ├── pages/           # Page components (file-based routing)
+│   │   ├── legal/       # Legal pages
+│   │   ├── services/    # Service pages including dynamic [serviceId].astro
+│   │   └── ...          # Other pages
+│   └── styles/          # Global styles
+│       ├── global.css   # Tailwind directives
+│       ├── basic.css    # Custom utility classes
+│       └── utilities.css # Additional utility classes
+└── package.json
 ```
 
-**Edit a file directly in GitHub**
+## 🗺️ Site Map
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Main Pages
+- **Home** (`/`)
+- **About** (`/about`)
+- **Services** (`/services`)
+- **Contact** (`/contact`)
 
-**Use GitHub Codespaces**
+### Dynamic Pages
+- **Service Detail Pages** (`/services/[serviceId]`)
+  - Sales Hiring
+  - Sales Training
+  - Sales Process
+  - Performance Metrics
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Legal Pages
+- **Privacy Policy** (`/legal/privacy-policy`)
+- **Terms of Service** (`/legal/terms`)
+- **Cookie Policy** (`/legal/cookies`)
 
-## What technologies are used for this project?
+## 🧞 Commands
 
-This project is built with .
+All commands are run from the root of the project, from a terminal:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:4321`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
 
-## How can I deploy this project?
+## 🚢 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/61da31ae-64e4-4cdd-b559-52480bb82ce1) and click on Share -> Publish.
+This site is deployed on Netlify with the following configuration:
 
-## I want to use a custom domain - is that possible?
+- **Build Command**: `npm run build`
+- **Publish Directory**: `dist`
+- **Branch**: astro-migration
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 🧩 Web Architecture
+
+- **Routing**: Astro's file-based routing system
+- **Dynamic Routes**: Using `[serviceId].astro` for service detail pages
+- **Static Generation**: All pages pre-rendered at build time
+- **Minimal JavaScript**: Only where needed for interactivity
+
+## 🔮 Future Improvements
+
+- Add a blog section for content marketing
+- Implement image optimization with Astro's built-in tools
+- Add structured data (JSON-LD) for services
+- Implement more comprehensive testing
+
+## 📝 License
+
+This project is free to use.

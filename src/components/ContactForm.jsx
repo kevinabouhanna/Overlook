@@ -149,7 +149,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <Button type="submit">
+          <Button type="submit" className="bg-black text-white hover:bg-gray-800">
             Send Message
           </Button>
         </div>

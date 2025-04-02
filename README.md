@@ -1,48 +1,90 @@
-# Astro Starter Kit: Basics
+# Overlook Sales Consulting Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. This project was migrated from React to Astro to improve performance, SEO, and maintainability.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Tech Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Framework**: [Astro](https://astro.build) (migrated from React)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **UI Components**: Custom components with [shadcn/ui](https://ui.shadcn.com) integration
+- **Deployment**: [Netlify](https://netlify.com)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/              # Static assets
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...          # Other components (Navbar, Footer, etc.)
+│   ├── data/            # Data files (services.js, etc.)
+│   ├── layouts/         # Layout components
+│   │   └── MainLayout.astro
+│   ├── pages/           # Page components (file-based routing)
+│   │   ├── legal/       # Legal pages
+│   │   ├── services/    # Service pages including dynamic [serviceId].astro
+│   │   └── ...          # Other pages
+│   └── styles/          # Global styles
+│       ├── global.css   # Tailwind directives
+│       ├── basic.css    # Custom utility classes
+│       └── utilities.css # Additional utility classes
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🗺️ Site Map
+
+### Main Pages
+- **Home** (`/`)
+- **About** (`/about`)
+- **Services** (`/services`)
+- **Contact** (`/contact`)
+
+### Dynamic Pages
+- **Service Detail Pages** (`/services/[serviceId]`)
+  - Sales Hiring
+  - Sales Training
+  - Sales Process
+  - Performance Metrics
+
+### Legal Pages
+- **Privacy Policy** (`/legal/privacy-policy`)
+- **Terms of Service** (`/legal/terms`)
+- **Cookie Policy** (`/legal/cookies`)
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:4321`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
 
-## 👀 Want to learn more?
+## 🚢 Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This site is deployed on Netlify with the following configuration:
+
+- **Build Command**: `npm run build`
+- **Publish Directory**: `dist`
+- **Branch**: astro-migration
+
+## 🧩 Web Architecture
+
+- **Routing**: Astro's file-based routing system
+- **Dynamic Routes**: Using `[serviceId].astro` for service detail pages
+- **Static Generation**: All pages pre-rendered at build time
+- **Minimal JavaScript**: Only where needed for interactivity
+
+## 🔮 Future Improvements
+
+- Add a blog section for content marketing
+- Implement image optimization with Astro's built-in tools
+- Add structured data (JSON-LD) for services
+- Implement more comprehensive testing
+
+## 📝 License
+
+This project is free to use.

@@ -1,9 +1,8 @@
 export default {
   plugins: {
-    '@tailwindcss/postcss': {},
-    'autoprefixer': {},
+    'autoprefixer': {}
   }
 }
 
-// This file is used by Tailwind CSS and PostCSS
-// It's important for processing Tailwind's utility classes
+// This file is used by PostCSS
+// We're using the Vite plugin for Tailwind integration instead of PostCSS

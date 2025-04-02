@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import { servicesMap } from '../../data/services.js';
+import type { Service, ServiceFeature, ServicesMap } from '../../types/services';
 
 // Using the imported servicesMap
 /*
@@ -129,15 +130,25 @@ const servicesMap = {
 
 // Define the getStaticPaths function to pre-generate all service pages at build time
 export function getStaticPaths() {
+  // Type assertion for servicesMap
+  const typedServicesMap = servicesMap as ServicesMap;
+
   // Return an array of objects with the params for each service page
-  return Object.keys(servicesMap).map(serviceId => ({
-    params: { serviceId },
-    props: { service: servicesMap[serviceId] }
-  }));
+  return Object.keys(typedServicesMap).map((serviceId: string) => {
+    // Type guard: Ensure serviceId is a valid key in typedServicesMap
+    if (!(serviceId in typedServicesMap)) {
+      throw new Error(`Invalid service ID: ${serviceId}`);
+    }
+
+    return {
+      params: { serviceId },
+      props: { service: typedServicesMap[serviceId] }
+    };
+  });
 }
 
 // Get the service data from props
-const { service } = Astro.props;
+const { service } = Astro.props as { service: Service };
 
 // Set the page metadata
 const title = `${service.title} - Overlook Sales Consulting`;
@@ -181,7 +192,7 @@ const description = service.longDescription.substring(0, 160);
         <h3 class="text-2xl font-bold mb-4">Benefits</h3>
         <ul class="list-disc list-inside space-y-2 text-lg text-gray-700 mb-8">
           {Array.isArray(service.benefits)
-            ? service.benefits.map((benefit) => (
+            ? service.benefits.map((benefit: string) => (
                 <li>{benefit}</li>
               ))
             : null
@@ -199,7 +210,7 @@ const description = service.longDescription.substring(0, 160);
 
         <div class="space-y-12">
           {Array.isArray(service.features)
-            ? service.features.map((feature, index) => (
+            ? service.features.map((feature: ServiceFeature, index: number) => (
             <div class="flex flex-col md:flex-row animate-on-scroll" style={{ transitionDelay: `${index * 0.1}s` }}>
               <div class="md:w-16 w-full flex-shrink-0 flex md:justify-center">
                 <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 md:mb-0">

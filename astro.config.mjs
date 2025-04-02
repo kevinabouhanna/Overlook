@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
+// Import Tailwind CSS Vite plugin for integration
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
@@ -26,6 +27,7 @@ export default defineConfig({
 
   // Vite configuration
   vite: {
+    // Use Tailwind CSS via the Vite plugin (preferred over PostCSS)
     plugins: [tailwindcss()],
     resolve: {
       alias: {

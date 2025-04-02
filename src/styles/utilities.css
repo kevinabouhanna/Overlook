@@ -1,6 +1,29 @@
-/* Custom utility classes to supplement Tailwind v4 */
+/* 
+ * Consolidated Utilities CSS
+ * This file contains all custom utility classes organized by category
+ */
 
-/* Display utilities */
+/* ===== Base Styles ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Layout Utilities ===== */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Display */
 .block { display: block; }
 .inline-block { display: inline-block; }
 .inline { display: inline; }
@@ -10,19 +33,21 @@
 .grid { display: grid; }
 .hidden { display: none; }
 
-/* Responsive display utilities */
-@media (min-width: 768px) {
-  .md\:block { display: block; }
-  .md\:inline-block { display: inline-block; }
-  .md\:inline { display: inline; }
-  .md\:flex { display: flex; }
-  .md\:inline-flex { display: inline-flex; }
-  .md\:table { display: table; }
-  .md\:grid { display: grid; }
-  .md\:hidden { display: none; }
-}
+/* Positioning */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.z-10 { z-index: 10; }
 
-/* Padding utilities */
+/* Flex & Grid */
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* ===== Spacing Utilities ===== */
+
+/* Padding */
 .p-0 { padding: 0; }
 .p-1 { padding: 0.25rem; }
 .p-2 { padding: 0.5rem; }
@@ -114,7 +139,7 @@
 .pr-16 { padding-right: 4rem; }
 .pr-20 { padding-right: 5rem; }
 
-/* Margin utilities */
+/* Margin */
 .m-0 { margin: 0; }
 .m-1 { margin: 0.25rem; }
 .m-2 { margin: 0.5rem; }
@@ -210,7 +235,7 @@
 .mr-20 { margin-right: 5rem; }
 .mr-auto { margin-right: auto; }
 
-/* Gap utilities */
+/* Gap */
 .gap-0 { gap: 0; }
 .gap-1 { gap: 0.25rem; }
 .gap-2 { gap: 0.5rem; }
@@ -224,7 +249,7 @@
 .gap-16 { gap: 4rem; }
 .gap-20 { gap: 5rem; }
 
-/* Space utilities */
+/* Space Between */
 .space-y-0 > * + * { margin-top: 0; }
 .space-y-1 > * + * { margin-top: 0.25rem; }
 .space-y-2 > * + * { margin-top: 0.5rem; }
@@ -251,98 +276,201 @@
 .space-x-16 > * + * { margin-left: 4rem; }
 .space-x-20 > * + * { margin-left: 5rem; }
 
-/* Responsive utilities for medium screens and up */
-@media (min-width: 768px) {
-  .md\:p-8 { padding: 2rem; }
-  .md\:px-4 { padding-left: 1rem; padding-right: 1rem; }
-  .md\:py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-  .md\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-  .md\:mb-4 { margin-bottom: 1rem; }
-  .md\:mb-6 { margin-bottom: 1.5rem; }
-  .md\:mb-8 { margin-bottom: 2rem; }
-  .md\:mb-0 { margin-bottom: 0; }
-  .md\:ml-8 { margin-left: 2rem; }
-  .md\:gap-8 { gap: 2rem; }
-  .md\:gap-12 { gap: 3rem; }
+/* ===== Typography ===== */
 
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Font Sizes - organized from smallest to largest */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+.text-6xl { font-size: 3.75rem; }
+.text-7xl { font-size: 4.5rem; }
+.text-8xl { font-size: 6rem; }
 
-  .md\:flex-row { flex-direction: row; }
-  .md\:justify-center { justify-content: center; }
-  .md\:w-16 { width: 4rem; }
+/* Font Styles */
+.font-bold { font-weight: 700; }
+.text-center { text-align: center; }
+
+/* Text Colors */
+.text-white { color: #fff; }
+.text-black { color: #000; }
+.text-gray-200 { color: #e5e7eb; }
+.text-gray-600 { color: #4b5568; }
+.text-gray-700 { color: #4a5568; }
+
+/* ===== Visual Elements ===== */
+
+/* Backgrounds */
+.bg-white { background-color: #fff; }
+.bg-black { background-color: #000; }
+.bg-gray-50 { background-color: #f9fafb; }
+.bg-gray-100 { background-color: #f3f4f6; }
+.bg-gray-200 { background-color: #e5e7eb; }
+.bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+
+/* Custom Gradients */
+.bg-radial-gradient {
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
 }
 
-/* Responsive utilities for small screens and up */
-@media (min-width: 640px) {
-  .sm\:flex-row { flex-direction: row; }
-  .sm\:gap-4 { gap: 1rem; }
-}
+/* Borders */
+.border { border-width: 1px; }
+.border-2 { border-width: 2px; }
+.border-black { border-color: #000; }
+.border-gray-200 { border-color: #e5e7eb; }
+.border-gray-300 { border-color: #d1d5db; }
 
-/* Additional utilities that might be missing */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1400px;
-  }
-}
-
+/* Rounded Corners */
 .rounded-md { border-radius: 0.375rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .rounded-full { border-radius: 9999px; }
 
+/* Shadows */
 .shadow-md {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
-
 .shadow-lg {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-
 .shadow-xl {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Sizing */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.h-96 { height: 24rem; }
+.max-w-2xl { max-width: 42rem; }
+.max-w-3xl { max-width: 48rem; }
+
+/* Object Fit */
+.object-cover { object-fit: cover; }
+
+/* Lists */
+.list-disc { list-style-type: disc; }
+.list-inside { list-style-position: inside; }
+
+/* ===== Interactive Elements ===== */
+
+/* Transitions */
 .transition-colors {
   transition-property: color, background-color, border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
+/* Hover States */
 .hover\:bg-gray-100:hover { background-color: #f3f4f6; }
 .hover\:bg-gray-800:hover { background-color: #1f2937; }
+.hover\:bg-black:hover { background-color: #000000; }
 .hover\:text-white:hover { color: #ffffff; }
 .hover\:text-black:hover { color: #000000; }
-.hover\:bg-black:hover { background-color: #000000; }
+
+/* ===== Animations ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Component-Specific Styles ===== */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.service-card-overlay {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 0;
+}
+
+.service-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hero-title span {
+  opacity: 0;
+  transform: translateY(2rem);
+  display: inline-block;
+}
+
+/* ===== Responsive Utilities ===== */
+@media (min-width: 640px) {
+  .sm\:flex-row { flex-direction: row; }
+  .sm\:gap-4 { gap: 1rem; }
+}
+
+@media (min-width: 768px) {
+  /* Display */
+  .md\:block { display: block; }
+  .md\:inline-block { display: inline-block; }
+  .md\:inline { display: inline; }
+  .md\:flex { display: flex; }
+  .md\:inline-flex { display: inline-flex; }
+  .md\:table { display: table; }
+  .md\:grid { display: grid; }
+  .md\:hidden { display: none; }
+  
+  /* Layout */
+  .md\:flex-row { flex-direction: row; }
+  .md\:justify-center { justify-content: center; }
+  
+  /* Grid */
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  
+  /* Spacing */
+  .md\:p-8 { padding: 2rem; }
+  .md\:px-4 { padding-left: 1rem; padding-right: 1rem; }
+  .md\:py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+  .md\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+  .md\:mb-0 { margin-bottom: 0; }
+  .md\:mb-4 { margin-bottom: 1rem; }
+  .md\:mb-6 { margin-bottom: 1.5rem; }
+  .md\:mb-8 { margin-bottom: 2rem; }
+  .md\:ml-8 { margin-left: 2rem; }
+  .md\:gap-8 { gap: 2rem; }
+  .md\:gap-12 { gap: 3rem; }
+  
+  /* Typography */
+  .md\:text-xs { font-size: 0.75rem; }
+  .md\:text-sm { font-size: 0.875rem; }
+  .md\:text-base { font-size: 1rem; }
+  .md\:text-lg { font-size: 1.125rem; }
+  .md\:text-xl { font-size: 1.25rem; }
+  .md\:text-2xl { font-size: 1.5rem; }
+  .md\:text-3xl { font-size: 1.875rem; }
+  .md\:text-4xl { font-size: 2.25rem; }
+  .md\:text-5xl { font-size: 3rem; }
+  .md\:text-6xl { font-size: 3.75rem; }
+  .md\:text-7xl { font-size: 4.5rem; }
+  .md\:text-8xl { font-size: 6rem; }
+  
+  /* Sizing */
+  .md\:w-16 { width: 4rem; }
+}

@@ -1,4 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+/**
+ * Tailwind CSS Configuration
+ * Documentation: https://tailwindcss.com/docs/configuration
+ *
+ * We're using Tailwind CSS v4 with the Vite plugin integration
+ *
+ * @type {import('tailwindcss').Config}
+ */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {

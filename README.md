@@ -5,7 +5,7 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 ## 🚀 Tech Stack
 
 - **Framework**: [Astro](https://astro.build) (migrated from React)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com) with Vite plugin integration
 - **UI Components**: Custom components with [shadcn/ui](https://ui.shadcn.com) integration
 - **Deployment**: [Netlify](https://netlify.com)
 
@@ -26,9 +26,8 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 │   │   ├── services/    # Service pages including dynamic [serviceId].astro
 │   │   └── ...          # Other pages
 │   └── styles/          # Global styles
-│       ├── global.css   # Tailwind directives
-│       ├── basic.css    # Custom utility classes
-│       └── utilities.css # Additional utility classes
+│       ├── global.css   # Tailwind directives and CSS variables
+│       └── utilities.css # Custom utility classes
 └── package.json
 ```
 
@@ -78,7 +77,23 @@ This site is deployed on Netlify with the following configuration:
 - **Static Generation**: All pages pre-rendered at build time
 - **Minimal JavaScript**: Only where needed for interactivity
 
-## 🔮 Future Improvements
+## � SEO Enhancements
+
+- Static HTML generation for better search engine indexing
+- Proper metadata and Open Graph tags
+- Automatically generated sitemap
+- Configured robots.txt
+
+## 🎨 CSS Architecture
+
+- **Tailwind Integration**: Using Vite plugin for optimal performance
+- **CSS Structure**:
+  - `global.css` - Tailwind directives and CSS variables
+  - `utilities.css` - Custom utility classes organized by category
+- **shadcn/ui Integration**: Using CSS variables for theming
+- **Documentation**: See [Tailwind Integration Guide](docs/tailwind-integration.md)
+
+## �🔮 Future Improvements
 
 - Add a blog section for content marketing
 - Implement image optimization with Astro's built-in tools

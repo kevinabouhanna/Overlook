@@ -1,0 +1,125 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ContactForm from '../components/ContactForm.jsx';
+---
+
+<MainLayout
+  title="Contact Overlook - Get in Touch"
+  description="Contact Overlook to discuss how we can help transform your sales organization."
+>
+  <!-- Hero Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Have questions about our services? Ready to transform your sales organization? Get in touch with our team.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="animate-on-scroll">
+          <ContactForm client:load />
+        </div>
+
+        <div class="animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Contact Information</h2>
+
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Email</h3>
+                <p class="text-gray-700">info@overlook-sales.com</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Phone</h3>
+                <p class="text-gray-700">+1 (555) 123-4567</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Office</h3>
+                <p class="text-gray-700">
+                  123 Business Avenue<br />
+                  Suite 456<br />
+                  San Francisco, CA 94107
+                </p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-2">Hours</h3>
+                <p class="text-gray-700">
+                  Monday - Friday: 9:00 AM - 6:00 PM<br />
+                  Saturday - Sunday: Closed
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-2">How quickly can you help improve our sales performance?</h3>
+            <p class="text-gray-700">
+              While results vary based on your current situation and goals, most clients see measurable improvements within 30-60 days of implementing our recommendations.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-2">Do you work with startups or only established companies?</h3>
+            <p class="text-gray-700">
+              We work with companies at all stages, from startups building their first sales team to established enterprises looking to optimize their existing sales organization.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-2">What industries do you specialize in?</h3>
+            <p class="text-gray-700">
+              While our methodologies can be applied across industries, we have particular expertise in SaaS, professional services, financial services, and technology.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-2">How do your services work? Do you offer ongoing support?</h3>
+            <p class="text-gray-700">
+              We offer both project-based engagements and ongoing support. Many clients start with a specific project (like sales team assessment or training) and then transition to ongoing coaching and optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Scroll animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animateOnScroll.forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>

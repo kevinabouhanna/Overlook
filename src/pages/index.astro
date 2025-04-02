@@ -1,0 +1,159 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Overlook - Sales Consultancy and Hiring"
+  description="Overlook helps businesses build, train, and optimize their sales teams for maximum performance."
+>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        alt="Modern office space with natural light"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-white opacity-50"></div>
+      <div class="absolute inset-0 bg-radial-gradient"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 hero-title text-black">
+          <span class="inline-block">Build.</span>{" "}
+          <span class="inline-block">Train.</span>{" "}
+          <span class="inline-block">Optimize.</span>
+        </h1>
+        <p class="text-xl md:text-2xl mb-12 text-gray-700">
+          We help businesses build, train, and optimize their sales teams for maximum performance.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="bg-black text-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-800 transition-colors"
+          >
+            Get Started
+          </a>
+          <a
+            href="/services"
+            class="bg-white text-black border-2 border-black px-6 py-3 rounded-md text-base font-medium hover:bg-gray-100 transition-colors"
+          >
+            Our Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          We offer comprehensive solutions to help you build and optimize your sales organization.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md">
+          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+          <h3 class="text-xl font-bold mb-4">Sales Hiring</h3>
+          <p class="text-gray-700">We help you identify, attract, and hire top sales talent that fits your company culture and goals.</p>
+        </div>
+
+        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md" style={{ transitionDelay: "0.2s" }}>
+          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+          <h3 class="text-xl font-bold mb-4">Sales Training</h3>
+          <p class="text-gray-700">Comprehensive training programs designed to equip your team with the skills they need to succeed.</p>
+        </div>
+
+        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md" style={{ transitionDelay: "0.4s" }}>
+          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+          <h3 class="text-xl font-bold mb-4">Performance Coaching</h3>
+          <p class="text-gray-700">Ongoing support and guidance to help your sales team develop their skills and exceed their targets.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 animate-on-scroll">
+        <a
+          href="/services"
+          class="border-2 border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded-md text-base font-medium"
+        >
+          Discover More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Don't just take our word for it. Here's what our clients have to say about working with us.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll">
+          <div class="mb-4">
+            <div>
+              <h4 class="font-bold">John Smith</h4>
+              <p class="text-gray-600">CEO, Tech Innovations</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            "Overlook transformed our sales organization. Their strategic approach to hiring and training has resulted in a 40% increase in our sales within just six months."
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
+          <div class="mb-4">
+            <div>
+              <h4 class="font-bold">Sarah Johnson</h4>
+              <p class="text-gray-600">Sales Director, Growth Co.</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            "The sales process framework that Overlook implemented has streamlined our operations and given us clear visibility into our pipeline. It's been a game-changer."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  // Animation for hero title
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hero title animation
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+      const spans = heroTitle.querySelectorAll('span');
+      spans.forEach((span, index) => {
+        setTimeout(() => {
+          span.style.opacity = '1';
+          span.style.transform = 'translateY(0)';
+          span.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }, 300 * index);
+      });
+    }
+
+    // Scroll animations
+    const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animateOnScroll.forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>

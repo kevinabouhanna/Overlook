@@ -1,0 +1,52 @@
+---
+// Import styles
+import '../styles/global.css';
+import '../styles/basic.css';
+import '../styles/utilities.css';
+
+// Import components
+import SimpleNavbar from '../components/SimpleNavbar.astro';
+import Footer from '../components/Footer.astro';
+
+// Define props
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Overlook - Sales Consultancy and Hiring",
+  description = "Overlook - Sales Consultancy and Hiring",
+  ogImage = "https://via.placeholder.com/1200x630"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Overlook" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@abouhanna" />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <header>
+      <SimpleNavbar />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

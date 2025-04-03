@@ -6,8 +6,10 @@ import '../styles/global.css';
 import '../styles/utilities.css';
 
 // Import components
-import SimpleNavbar from '../components/SimpleNavbar.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { Toaster } from '../components/ui/toaster.jsx';
+
 
 // Define props
 export interface Props {
@@ -43,11 +45,12 @@ const {
   </head>
   <body>
     <header>
-      <SimpleNavbar />
+      <Navbar />
     </header>
     <main>
       <slot />
     </main>
     <Footer />
+    <Toaster client:load />
   </body>
 </html>

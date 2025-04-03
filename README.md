@@ -95,10 +95,11 @@ This site is deployed on Netlify with the following configuration:
 
 ## �🔮 Future Improvements
 
+- Implement image optimization with Astro's built-in tools (Performance)
+- Move component-specific styles to their components (DX)
 - Add WhatsApp button (Accessibility)
 - Integrate Netlify's contact form submissions (Accessibility)
 - Add dark mode support (Accessibility)
 - Add Google Calendar integration for scheduling (UX)
 - Use Framer Motion for advanced animation (UX)
-- Implement image optimization with Astro's built-in tools (Perfromance)
 - Add structured data (JSON-LD) for services (SEO)

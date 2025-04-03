@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +14,15 @@ const ContactForm = () => {
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     error: false,
-    message: ''
+    message: '',
+    submitting: false
   });
+
+  // We don't need to check for success parameter anymore since we're redirecting to a dedicated success page
+  // This useEffect can be used for other initialization if needed
+  useEffect(() => {
+    // Any initialization code can go here
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,32 +35,79 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form
+    // Client-side validation
     if (!formData.firstName || !formData.email || !formData.message) {
       setFormStatus({
         submitted: false,
         error: true,
-        message: 'Please fill out all required fields.'
+        message: 'Please fill out all required fields.',
+        submitting: false
       });
       return;
     }
 
-    // In a real implementation, you would send the form data to your server
-    // For now, we'll just simulate a successful submission
+    // Show submitting state
     setFormStatus({
-      submitted: true,
+      submitted: false,
       error: false,
-      message: 'Thank you for your message! We\'ll get back to you soon.'
+      message: '',
+      submitting: true
     });
 
-    // Reset form after successful submission
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      company: '',
-      message: ''
-    });
+    // Get form data for submission
+    const form = e.target;
+    const formDataForSubmission = new FormData(form);
+
+    // Submit the form data to Netlify
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formDataForSubmission).toString()
+    })
+      .then(() => {
+        // Show success toast
+        toast.success('Message sent successfully! We\'ll get back to you soon.', {
+          duration: 5000,
+          position: 'bottom-right',
+        });
+
+        // Reset form
+        form.reset();
+
+        // Update form status
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: '',
+          submitting: false
+        });
+
+        // Reset form state
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      })
+      .catch((error) => {
+        // Show error toast
+        toast.error('There was a problem sending your message. Please try again.', {
+          duration: 5000,
+          position: 'bottom-right',
+        });
+
+        console.error('Form submission error:', error);
+
+        // Update form status
+        setFormStatus({
+          submitted: false,
+          error: true,
+          message: 'There was a problem sending your message. Please try again.',
+          submitting: false
+        });
+      });
   };
 
   return (
@@ -73,7 +128,21 @@ const ContactForm = () => {
         </p>
       )}
 
-      <form className="space-y-6" onSubmit={handleSubmit}>
+      <form
+        className="space-y-6"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        {/* Netlify form requirements */}
+        <input type="hidden" name="form-name" value="contact" />
+        <div className="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -149,8 +218,12 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <Button type="submit" className="bg-black text-white hover:bg-gray-800">
-            Send Message
+          <Button
+            type="submit"
+            className="bg-black text-white hover:bg-gray-800"
+            disabled={formStatus.submitting}
+          >
+            {formStatus.submitting ? 'Sending...' : 'Send Message'}
           </Button>
         </div>
       </form>

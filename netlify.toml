@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Form submissions are handled with toast notifications
+# No redirects needed
+
+# Handle 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
+
+# Form handling settings
+[build.processing.html]
+  pretty_urls = true

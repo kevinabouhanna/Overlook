@@ -395,6 +395,10 @@ body {
   height: 100%;
 }
 
+.service-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 .service-card-overlay {
   position: relative;
   overflow: hidden;
@@ -406,10 +410,6 @@ body {
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   z-index: 0;
-}
-
-.service-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .hero-title span {

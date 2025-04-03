@@ -15,3 +15,9 @@
 # Form handling settings
 [build.processing.html]
   pretty_urls = true
+
+# Custom headers to fix Permissions-Policy errors
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"

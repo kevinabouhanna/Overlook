@@ -14,7 +14,7 @@ const ContactForm = () => {
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     error: false,
-    message: '',
+    message: 'Message sent successfully! We\'ll get back to you soon.',
     submitting: false
   });
 

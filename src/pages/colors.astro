@@ -1,0 +1,20 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ColorPalette from '../components/ColorPalette.astro';
+---
+
+<MainLayout
+  title="Color Palettes | Overlook"
+  description="Color palette demonstration for Overlook website"
+>
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-5xl">
+      <h1 class="text-4xl font-bold mb-8">Color Palettes</h1>
+      <p class="text-lg mb-8">
+        This page demonstrates the color palettes available in the Overlook website, including success (green), error (red), warning (yellow), and info (blue) colors.
+      </p>
+      
+      <ColorPalette />
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,45 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+  src: string | ImageMetadata;
+  alt: string;
+  widths: number[];
+  sizes: string;
+  width: number;  // Required for remote images
+  height: number; // Required for remote images
+  class?: string;
+  formats?: Array<'webp' | 'avif' | 'png' | 'jpeg'>;
+  quality?: number;
+  pictureAttributes?: Record<string, any>;
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  src,
+  alt,
+  widths,
+  sizes,
+  width,  // Required for remote images
+  height, // Required for remote images
+  class: className = '',
+  formats = ['webp', 'jpeg'],
+  quality = 80,
+  pictureAttributes = {},
+  loading = 'lazy'
+} = Astro.props;
+---
+
+<Picture
+  src={src}
+  alt={alt}
+  widths={widths}
+  sizes={sizes}
+  width={width}
+  height={height}
+  formats={formats}
+  quality={quality}
+  pictureAttributes={pictureAttributes}
+  class={className}
+  loading={loading}
+/>

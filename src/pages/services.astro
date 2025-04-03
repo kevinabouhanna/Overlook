@@ -1,59 +1,10 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { servicesData } from '../data/services.js';
+import OptimizedImage from '../components/common/OptimizedImage.astro';
 
 // Use the imported services data
 const services = servicesData;
-/*
-  {
-    id: 'sales-hiring',
-    title: 'Sales Hiring',
-    description: 'Find and hire the right sales talent for your organization.',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      'Sales talent assessment and profiling',
-      'Candidate sourcing and screening',
-      'Interview process design',
-      'Onboarding program development'
-    ]
-  },
-  {
-    id: 'sales-training',
-    title: 'Sales Training',
-    description: 'Equip your team with the skills they need to succeed.',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      'Customized training programs',
-      'Sales methodology implementation',
-      'Role-specific skill development',
-      'Ongoing coaching and reinforcement'
-    ]
-  },
-  {
-    id: 'sales-process',
-    title: 'Sales Process Optimization',
-    description: 'Streamline your sales operations for maximum efficiency.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      'Sales process audit and mapping',
-      'CRM implementation and optimization',
-      'Sales enablement tools integration',
-      'Process automation and efficiency'
-    ]
-  },
-  {
-    id: 'performance-metrics',
-    title: 'Performance Metrics',
-    description: 'Measure and improve your sales team\'s performance.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    features: [
-      'KPI development and tracking',
-      'Performance dashboard creation',
-      'Data-driven coaching frameworks',
-      'Incentive program design'
-    ]
-  }
-];*/
 ---
 
 <MainLayout
@@ -79,10 +30,13 @@ const services = servicesData;
         {services.map((service, index) => (
           <div class="service-card animate-on-scroll" style={{ transitionDelay: `${index * 0.1}s` }}>
             <div class="service-card-overlay h-full">
-              <img
+              <OptimizedImage
                 src={service.image}
                 alt={service.title}
                 class="absolute inset-0 w-full h-full object-cover"
+                width={800}
+                height={600}
+                loading='eager'
               />
               <div class="gradient-overlay"></div>
               <div class="relative z-10 p-8 h-full flex flex-col">

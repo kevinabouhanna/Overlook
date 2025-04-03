@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import OptimizedImage from '../components/common/OptimizedImage.astro';
 ---
 
 <MainLayout
@@ -35,10 +36,13 @@ import MainLayout from '../layouts/MainLayout.astro';
           </p>
         </div>
         <div class="relative h-96 animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
-          <img
+          <OptimizedImage
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="Team meeting in a modern office"
             class="w-full h-full object-cover rounded-lg shadow-lg"
+            width={2070}
+            height={1380}
+            loading="eager"
           />
         </div>
       </div>
@@ -96,10 +100,13 @@ import MainLayout from '../layouts/MainLayout.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="text-center animate-on-scroll">
           <div class="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4">
-            <img
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
               alt="John Doe"
               class="w-full h-full object-cover"
+              width={774}
+              height={774}
+              loading='eager'
             />
           </div>
           <h3 class="text-xl font-bold mb-1">John Doe</h3>
@@ -109,10 +116,13 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         <div class="text-center animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
           <div class="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4">
-            <img
+            <OptimizedImage
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80"
               alt="Jane Smith"
               class="w-full h-full object-cover"
+              width={776}
+              height={776}
+              loading='eager'
             />
           </div>
           <h3 class="text-xl font-bold mb-1">Jane Smith</h3>

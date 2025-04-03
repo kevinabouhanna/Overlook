@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string | ImageMetadata;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  format?: 'webp' | 'avif' | 'png' | 'jpeg';
+  quality?: number;
+  loading?: 'lazy' | 'eager';
+}
+
+// We'll use any for now to avoid TypeScript errors with remote images
+type ImageMetadata = any;
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  format = 'webp',
+  quality = 80,
+  loading = 'lazy'
+} = Astro.props;
+---
+
+<Image
+  src={src}
+  alt={alt}
+  width={width || 800}
+  height={height || 600}
+  format={format}
+  quality={quality}
+  class={className}
+  loading={loading}
+/>

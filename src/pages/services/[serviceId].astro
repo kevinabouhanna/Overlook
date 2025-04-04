@@ -39,19 +39,20 @@ const description = service.longDescription.substring(0, 160);
   ogImage={service.image}
 >
   <!-- Schema.org JSON-LD markup for individual service -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+  <script type="application/ld+json" is:inline>
+  {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": service.title,
-    "description": service.longDescription,
+    "name": "${service.title}",
+    "description": "${service.longDescription}",
     "provider": {
       "@type": "Organization",
       "name": "Overlook Sales Consulting",
-      "url": new URL("/", Astro.url)
+      "url": "https://overlook-sales.com"
     },
-    "serviceType": service.title,
-    "url": Astro.url.href,
-    "image": service.image,
+    "serviceType": "${service.title}",
+    "url": "https://overlook-sales.com/services/${service.id}",
+    "image": "https://overlook-sales.com/images/services/${service.id}.jpg",
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
@@ -59,25 +60,27 @@ const description = service.longDescription.substring(0, 160);
     },
     "serviceOutput": {
       "@type": "Thing",
-      "name": `Improved ${service.title}`
+      "name": "Improved ${service.title}"
     },
-    "termsOfService": "https://overlook-sales.netlify.app/terms",
+    "termsOfService": "https://overlook-sales.com/legal/terms",
     "areaServed": {
       "@type": "Country",
       "name": "Lebanon"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": `${service.title} Features`,
-      "itemListElement": service.features.map((feature, index) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": feature.title,
-          "description": feature.description
-        },
-        "position": index + 1
-      }))
+      "name": "${service.title} Features",
+      "itemListElement": [
+        ${service.features.map((feature, index) => `{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "${feature.title}",
+            "description": "${feature.description}"
+          },
+          "position": ${index + 1}
+        }`).join(',\n        ')}
+      ]
     },
     "review": {
       "@type": "Review",
@@ -98,7 +101,36 @@ const description = service.longDescription.substring(0, 160);
       "datePublished": "2023-10-15",
       "reviewBody": "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
     }
-  })}></script>
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD markup for BreadcrumbList -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://overlook-sales.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://overlook-sales.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "${service.title}",
+        "item": "https://overlook-sales.com/services/${service.id}"
+      }
+    ]
+  }
+  </script>
   <!-- Hero Section -->
   <section class="relative h-96">
     <div class="absolute inset-0">

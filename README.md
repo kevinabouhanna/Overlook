@@ -108,4 +108,8 @@ This site is deployed on Netlify with the following configuration:
   - Add WhatsApp button (Accessibility)
   - Add dark mode support (Accessibility)
   - Add Google Calendar integration for scheduling (UX)
+  - Add a blur-up placeholder effect for lazy-loaded images to (UX)
   - Use Framer Motion for advanced animation (UX)
+  - Testimonial carousel (UX)
+  - Interactive FAQ accordion (UX)
+  - Add breadcrumbs to Service page (UX)

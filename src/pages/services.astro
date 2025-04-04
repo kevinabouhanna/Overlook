@@ -12,31 +12,93 @@ const services = servicesData;
   description="Explore Overlook's comprehensive services for sales team development, including hiring, training, process optimization, and performance metrics."
 >
   <!-- Schema.org JSON-LD markup for services -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+  <script type="application/ld+json" is:inline>
+  {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Overlook Sales Consulting",
-    "url": Astro.url.href,
-    "logo": new URL("/images/logo.png", Astro.url),
+    "url": "https://overlook-sales.com/services",
+    "logo": "https://overlook-sales.com/images/logo.png",
     "description": "Overlook Sales Consulting provides professional sales consulting services to help businesses improve their sales performance.",
-    "serviceType": services.map(service => service.title),
+    "serviceType": ["Sales Hiring", "Sales Training", "Sales Process Optimization", "Performance Metrics"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Sales Consulting Services",
-      "itemListElement": services.map((service, index) => ({
-        "@type": "Service",
-        "serviceType": service.title,
-        "name": service.title,
-        "description": service.description,
-        "url": new URL(`/services/${service.id}`, Astro.url),
-        "provider": {
-          "@type": "Organization",
-          "name": "Overlook Sales Consulting"
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "serviceType": "Sales Hiring",
+          "name": "Sales Hiring",
+          "description": "Find and hire the right sales talent for your organization.",
+          "url": "https://overlook-sales.com/services/sales-hiring",
+          "provider": {
+            "@type": "Organization",
+            "name": "Overlook Sales Consulting"
+          },
+          "position": 1
         },
-        "position": index + 1
-      }))
+        {
+          "@type": "Service",
+          "serviceType": "Sales Training",
+          "name": "Sales Training",
+          "description": "Equip your team with the skills they need to succeed.",
+          "url": "https://overlook-sales.com/services/sales-training",
+          "provider": {
+            "@type": "Organization",
+            "name": "Overlook Sales Consulting"
+          },
+          "position": 2
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Sales Process Optimization",
+          "name": "Sales Process Optimization",
+          "description": "Streamline your sales operations for maximum efficiency.",
+          "url": "https://overlook-sales.com/services/sales-process",
+          "provider": {
+            "@type": "Organization",
+            "name": "Overlook Sales Consulting"
+          },
+          "position": 3
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Performance Metrics",
+          "name": "Performance Metrics",
+          "description": "Measure and improve your sales team's performance.",
+          "url": "https://overlook-sales.com/services/performance-metrics",
+          "provider": {
+            "@type": "Organization",
+            "name": "Overlook Sales Consulting"
+          },
+          "position": 4
+        }
+      ]
     }
-  })}></script>
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD markup for BreadcrumbList -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://overlook-sales.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://overlook-sales.com/services"
+      }
+    ]
+  }
+  </script>
   <!-- Hero Section -->
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">

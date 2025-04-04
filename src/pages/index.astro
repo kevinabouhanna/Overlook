@@ -9,6 +9,75 @@ import ResponsiveImage from '../components/common/ResponsiveImage.astro';
   title="Overlook - Sales Consultancy and Hiring in Lebanon"
   description="Overlook helps businesses build, train, and optimize their sales teams for maximum performance."
 >
+  <!-- Schema.org JSON-LD markup for organization -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Overlook Sales Consulting",
+    "url": "https://overlook-sales.netlify.app/",
+    "logo": "https://overlook-sales.netlify.app/images/logo.png",
+    "description": "Overlook helps businesses build, train, and optimize their sales teams for maximum performance.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@overlook-sales.com",
+      "telephone": "+961 70 112 317"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/overlook-sales/",
+      "https://twitter.com/overlooksales"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD markup for reviews -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Overlook Sales Consulting Services",
+    "description": "Professional sales consulting services to help businesses improve their sales performance.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "27",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Joseph Habib"
+        },
+        "datePublished": "2023-06-15",
+        "reviewBody": "Overlook transformed our sales team. Their training program was exactly what we needed to boost our performance."
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Tony Yachouh"
+        },
+        "datePublished": "2023-07-22",
+        "reviewBody": "The sales process optimization service helped us streamline our operations and close deals faster. Highly recommended!"
+      }
+    ]
+  }
+  </script>
+
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
     <div class="absolute inset-0 z-0">

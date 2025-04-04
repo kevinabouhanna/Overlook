@@ -5,8 +5,91 @@ import ContactForm from '../components/ContactForm.jsx';
 
 <MainLayout
   title="Contact Overlook - Get in Touch"
-  description="Contact Overlook to discuss how we can help transform your sales organization."
+  description="Contact Overlook to discuss how we can help transform your organization."
 >
+  <!-- Schema.org JSON-LD markup for LocalBusiness -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService", "ConsultingService"],
+    "name": "Overlook Sales Consulting",
+    "url": "https://overlook-sales.netlify.app/",
+    "logo": "https://overlook-sales.netlify.app/images/logo.png",
+    "image": "https://overlook-sales.netlify.app/images/office.jpg",
+    "description": "Overlook helps businesses build, train, and optimize their sales teams for maximum performance.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "New Rawda, Street 5-12, Building 150",
+      "addressLocality": "Beirut",
+      "postalCode": "1107",
+      "addressCountry": "Lebanon"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.875222",
+      "longitude": "35.559528"
+    },
+    "telephone": "+961 70 112 317",
+    "email": "contact@overlook-sales.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    ],
+    "priceRange": "$1,000 to $10,000"
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD markup for FAQs -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can you help improve our sales performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While results vary based on your current situation and goals, most clients see measurable improvements within 30-60 days of implementing our recommendations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with startups or only established companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work with companies at all stages, from startups building their first sales team to established enterprises looking to optimize their existing sales organization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries do you specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While our methodologies can be applied across industries, we have particular expertise in SaaS, professional services, financial services, and technology."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do your services work? Do you offer ongoing support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer both project-based engagements and ongoing support. Many clients start with a specific project (like sales team assessment or training) and then transition to ongoing coaching and optimization."
+        }
+      }
+    ]
+  }
+  </script>
   <!-- Hero Section -->
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
@@ -34,7 +117,7 @@ import ContactForm from '../components/ContactForm.jsx';
             <div class="space-y-6">
               <div>
                 <h3 class="text-lg font-semibold mb-2">Email</h3>
-                <p class="text-gray-700">info@overlook-sales.com</p>
+                <p class="text-gray-700">contact@overlook-sales.com</p>
               </div>
 
               <div>
@@ -55,7 +138,7 @@ import ContactForm from '../components/ContactForm.jsx';
                 <h3 class="text-lg font-semibold mb-2">Hours</h3>
                 <p class="text-gray-700">
                   Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday: Closed
+                  Saturday: Closed<br />
                   Sunday: 9:00 AM - 1:00 PM
                 </p>
               </div>

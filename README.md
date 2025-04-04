@@ -95,14 +95,15 @@ This site is deployed on Netlify with the following configuration:
 
 ## �🔮 Future Improvements
 
-- Test form submissions on production with an email
+- Integrate Netlify's contact form submissions (Accessibility)
+  - Test form submissions on production with an email
 - Consider downloading remote images to the  src/assets directory
   - Update image paths in data files to use local images
   - Once updated remove loading="eager" to default to lazy loading.
 - Move component-specific styles to their components (DX)
-- Add WhatsApp button (Accessibility)
-- Integrate Netlify's contact form submissions (Accessibility)
-- Add dark mode support (Accessibility)
-- Add Google Calendar integration for scheduling (UX)
-- Use Framer Motion for advanced animation (UX)
-- Add structured data (JSON-LD) for services (SEO)
+
+- Features:
+  - Add WhatsApp button (Accessibility)
+  - Add dark mode support (Accessibility)
+  - Add Google Calendar integration for scheduling (UX)
+  - Use Framer Motion for advanced animation (UX)

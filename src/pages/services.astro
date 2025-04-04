@@ -11,6 +11,32 @@ const services = servicesData;
   title="Overlook Services - Sales Consulting Solutions"
   description="Explore Overlook's comprehensive services for sales team development, including hiring, training, process optimization, and performance metrics."
 >
+  <!-- Schema.org JSON-LD markup for services -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Overlook Sales Consulting",
+    "url": Astro.url.href,
+    "logo": new URL("/images/logo.png", Astro.url),
+    "description": "Overlook Sales Consulting provides professional sales consulting services to help businesses improve their sales performance.",
+    "serviceType": services.map(service => service.title),
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Sales Consulting Services",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "Service",
+        "serviceType": service.title,
+        "name": service.title,
+        "description": service.description,
+        "url": new URL(`/services/${service.id}`, Astro.url),
+        "provider": {
+          "@type": "Organization",
+          "name": "Overlook Sales Consulting"
+        },
+        "position": index + 1
+      }))
+    }
+  })}></script>
   <!-- Hero Section -->
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
@@ -122,7 +148,7 @@ const services = servicesData;
             <blockquote class="text-xl text-gray-700 italic mb-4">
               "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
             </blockquote>
-            <cite class="text-gray-900 font-semibold">— Robert Chen, CEO, TechGrowth Solutions</cite>
+            <cite class="text-gray-900 font-semibold">— Mazen Al Hajj, CEO of Circosoft</cite>
           </div>
         </div>
       </div>

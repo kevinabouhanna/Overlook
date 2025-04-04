@@ -38,6 +38,67 @@ const description = service.longDescription.substring(0, 160);
   description={description}
   ogImage={service.image}
 >
+  <!-- Schema.org JSON-LD markup for individual service -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.longDescription,
+    "provider": {
+      "@type": "Organization",
+      "name": "Overlook Sales Consulting",
+      "url": new URL("/", Astro.url)
+    },
+    "serviceType": service.title,
+    "url": Astro.url.href,
+    "image": service.image,
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD"
+    },
+    "serviceOutput": {
+      "@type": "Thing",
+      "name": `Improved ${service.title}`
+    },
+    "termsOfService": "https://overlook-sales.netlify.app/terms",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Lebanon"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `${service.title} Features`,
+      "itemListElement": service.features.map((feature, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": feature.title,
+          "description": feature.description
+        },
+        "position": index + 1
+      }))
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Mazen Al Hajj",
+        "jobTitle": "CEO",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Circosoft"
+        }
+      },
+      "datePublished": "2023-10-15",
+      "reviewBody": "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
+    }
+  })}></script>
   <!-- Hero Section -->
   <section class="relative h-96">
     <div class="absolute inset-0">

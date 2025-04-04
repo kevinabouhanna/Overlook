@@ -34,12 +34,14 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 ## 🗺️ Site Map
 
 ### Main Pages
+
 - **Home** (`/`)
 - **About** (`/about`)
 - **Services** (`/services`)
 - **Contact** (`/contact`)
 
 ### Dynamic Pages
+
 - **Service Detail Pages** (`/services/[serviceId]`)
   - Sales Hiring
   - Sales Training
@@ -47,6 +49,7 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
   - Performance Metrics
 
 ### Legal Pages
+
 - **Privacy Policy** (`/legal/privacy-policy`)
 - **Terms of Service** (`/legal/terms`)
 - **Cookie Policy** (`/legal/cookies`)
@@ -55,12 +58,12 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:4321`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
 
 ## 🚢 Deployment
 
@@ -99,9 +102,6 @@ This site is deployed on Netlify with the following configuration:
 - Update meta image, favicon and logo (Brand Identity)
 - Integrate Netlify's contact form submissions (Accessibility)
   - Test form submissions on production with an email
-- Consider downloading remote images to the  src/assets directory
-  - Update image paths in data files to use local images
-  - Once updated remove loading="eager" to default to lazy loading.
 - Move component-specific styles to their components (DX)
 
 - Features:
@@ -114,8 +114,10 @@ This site is deployed on Netlify with the following configuration:
   - Interactive FAQ accordion (UX)
   - Add breadcrumbs to Service page (UX)
   - Email and mobile links should be clickable (UX)
+  - Change Performance Metrics card's image (UX)
 
 Dev Features
-  - Add primary, secondary and tertiary to colors
-    - Tokenize the design system (DX)
-  - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)
+
+- Add primary, secondary and tertiary to colors
+  - Tokenize the design system (DX)
+- Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)

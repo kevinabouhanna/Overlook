@@ -1,10 +1,10 @@
 ---
 // Define the navigation links
 const navLinks = [
-  { href: '/', text: 'Home' },
-  { href: '/about', text: 'About' },
-  { href: '/services', text: 'Services' },
-  { href: '/contact', text: 'Contact' }
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/services", text: "Services" },
+  { href: "/contact", text: "Contact" },
 ];
 
 // Get the current path to highlight the active link
@@ -18,20 +18,27 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div class="navbar-links">
-      {navLinks.map(link => {
-        const isActive = currentPath === link.href ||
-                      (link.href !== '/' && currentPath.startsWith(link.href));
-        return (
-          <a href={link.href} class={isActive ? 'active' : ''}>
-            {link.text}
-          </a>
-        );
-      })}
+      {
+        navLinks.map((link) => {
+          const isActive =
+            currentPath === link.href ||
+            (link.href !== "/" && currentPath.startsWith(link.href));
+          return (
+            <a href={link.href} class={isActive ? "active" : ""}>
+              {link.text}
+            </a>
+          );
+        })
+      }
       <a href="/contact" class="cta-button">Get Started</a>
     </div>
 
     <div class="navbar-toggle">
-      <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false">
+      <button
+        id="mobile-menu-button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,15 +47,18 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <div id="mobile-menu" class="mobile-menu">
-    {navLinks.map(link => {
-      const isActive = currentPath === link.href ||
-                    (link.href !== '/' && currentPath.startsWith(link.href));
-      return (
-        <a href={link.href} class={isActive ? 'active' : ''}>
-          {link.text}
-        </a>
-      );
-    })}
+    {
+      navLinks.map((link) => {
+        const isActive =
+          currentPath === link.href ||
+          (link.href !== "/" && currentPath.startsWith(link.href));
+        return (
+          <a href={link.href} class={isActive ? "active" : ""}>
+            {link.text}
+          </a>
+        );
+      })
+    }
     <a href="/contact" class="cta-button">Get Started</a>
   </div>
 </nav>
@@ -70,7 +80,9 @@ const currentPath = Astro.url.pathname;
     background-color: transparent;
     box-shadow: none;
     z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .navbar.scrolled {
@@ -89,7 +101,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .navbar-logo a {
-    font-family: 'Belanosima', sans-serif;
+    font-family: "Belanosima", sans-serif;
     font-size: 2.5rem;
     font-weight: 400;
     color: black;
@@ -111,7 +123,7 @@ const currentPath = Astro.url.pathname;
     color: #4b5563;
     text-decoration: none;
     font-size: 1rem; /* 16px */
-    font-weight: 500;
+    font-weight: 400;
     padding: 0.5rem 0.75rem;
     border-radius: 0.375rem;
     transition: color 0.3s ease;
@@ -227,16 +239,17 @@ const currentPath = Astro.url.pathname;
 
 <script>
   // Mobile menu functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navbar = document.getElementById('main-navbar');
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("main-navbar");
 
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
-        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        mobileMenuButton.setAttribute('aria-expanded', (!expanded).toString());
-        mobileMenu.classList.toggle('active');
+      mobileMenuButton.addEventListener("click", () => {
+        const expanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+        mobileMenuButton.setAttribute("aria-expanded", (!expanded).toString());
+        mobileMenu.classList.toggle("active");
       });
     }
 
@@ -244,9 +257,9 @@ const currentPath = Astro.url.pathname;
     function handleScroll() {
       if (navbar) {
         if (window.scrollY > 10) {
-          navbar.classList.add('scrolled');
+          navbar.classList.add("scrolled");
         } else {
-          navbar.classList.remove('scrolled');
+          navbar.classList.remove("scrolled");
         }
       }
     }
@@ -255,7 +268,7 @@ const currentPath = Astro.url.pathname;
     handleScroll();
 
     // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
   });
 </script>
 

@@ -104,7 +104,7 @@ const services = servicesData;
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-        <p class="text-xl text-gray-700 mb-8">
+        <p class="text-xl text-black mb-8">
           Comprehensive solutions to help you build, train, and optimize your sales organization.
         </p>
       </div>
@@ -125,11 +125,11 @@ const services = servicesData;
                 width={800}
                 height={600}
               />
-              <div class="gradient-overlay"></div>
+              <div class="absolute inset-0 bg-white opacity-80"></div>
               <div class="relative z-10 p-8 h-full flex flex-col">
-                <h2 class="text-2xl font-bold mb-4 text-white">{service.title}</h2>
-                <p class="text-gray-200 mb-6">{service.description}</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-200 mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-black">{service.title}</h2>
+                <p class="text-black mb-6">{service.description}</p>
+                <ul class="list-disc list-inside space-y-2 text-black mb-6">
                   {Array.isArray(service.features)
                     ? service.features.map(feature => (
                         <li>{typeof feature === 'object' ? feature.title : feature}</li>
@@ -140,7 +140,7 @@ const services = servicesData;
                 <div class="mt-auto">
                   <a
                     href={`/services/${service.id}`}
-                    class="inline-block bg-white text-black px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
+                    class="inline-block text-black border-2 border-black px-6 py-2 rounded-md text-sm font-medium hover:bg-black hover:text-white transition-colors"
                   >
                     View {service.title}
                   </a>
@@ -158,7 +158,7 @@ const services = servicesData;
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Our Approach</h2>
-        <p class="text-xl text-gray-700">
+        <p class="text-xl text-black">
           We believe in a holistic approach to sales team development.
         </p>
       </div>
@@ -167,7 +167,7 @@ const services = servicesData;
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll">
           <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
           <h3 class="text-xl font-bold mb-4">Assess</h3>
-          <p class="text-gray-700">
+          <p class="text-black">
             We start by thoroughly assessing your current sales organization, processes, and performance.
           </p>
         </div>
@@ -175,7 +175,7 @@ const services = servicesData;
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.1s" }}>
           <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
           <h3 class="text-xl font-bold mb-4">Plan</h3>
-          <p class="text-gray-700">
+          <p class="text-black">
             Based on our assessment, we develop a customized plan to address your specific challenges and goals.
           </p>
         </div>
@@ -183,7 +183,7 @@ const services = servicesData;
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
           <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
           <h3 class="text-xl font-bold mb-4">Implement</h3>
-          <p class="text-gray-700">
+          <p class="text-black">
             We work alongside your team to implement the plan, providing hands-on guidance and support.
           </p>
         </div>
@@ -191,7 +191,7 @@ const services = servicesData;
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.3s" }}>
           <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">4</div>
           <h3 class="text-xl font-bold mb-4">Optimize</h3>
-          <p class="text-gray-700">
+          <p class="text-black">
             We continuously measure results and refine our approach to ensure ongoing improvement.
           </p>
         </div>
@@ -206,10 +206,10 @@ const services = servicesData;
         <div class="flex flex-col md:flex-row items-center">
           <div class="w-24 h-24 bg-gray-200 rounded-full mb-6 md:mb-0 md:mr-8"></div>
           <div>
-            <blockquote class="text-xl text-gray-700 italic mb-4">
+            <blockquote class="text-xl text-gray-900 italic mb-4">
               "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
             </blockquote>
-            <cite class="text-gray-900 font-semibold">— Mazen Al Hajj, CEO of Circosoft</cite>
+            <cite class="text-gray-700 font-semibold">— Mazen Al Hajj, CEO of Circosoft</cite>
           </div>
         </div>
       </div>
@@ -221,7 +221,7 @@ const services = servicesData;
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Sales Organization?</h2>
-        <p class="text-xl text-gray-700 mb-8">
+        <p class="text-xl text-black mb-8">
           Let's discuss how our services can help you achieve your sales goals.
         </p>
         <a

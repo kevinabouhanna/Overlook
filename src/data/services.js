@@ -1,10 +1,16 @@
+// Import service images
+import salesHiringImage from '../assets/images/services/sales-hiring.jpg';
+import salesTrainingImage from '../assets/images/services/sales-training.jpg';
+import salesProcessImage from '../assets/images/services/sales-process.jpg';
+import performanceMetricsImage from '../assets/images/services/performance-metrics.jpg';
+
 // Define the services data
 export const servicesData = [
   {
     id: 'sales-hiring',
     title: 'Sales Hiring',
     description: 'Find and hire the right sales talent for your organization.',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: salesHiringImage,
     longDescription: 'Our Sales Hiring service helps you identify, attract, and hire top sales talent that fits your company culture and goals. We use a data-driven approach to assess candidates and build high-performing sales teams.',
     benefits: [
       'Reduce hiring mistakes and turnover',
@@ -35,7 +41,7 @@ export const servicesData = [
     id: 'sales-training',
     title: 'Sales Training',
     description: 'Equip your team with the skills they need to succeed.',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: salesTrainingImage,
     longDescription: 'Our Sales Training programs are designed to equip your team with the skills, knowledge, and confidence they need to excel. We offer customized training solutions that address your specific challenges and goals.',
     benefits: [
       'Improve sales skills and performance',
@@ -66,7 +72,7 @@ export const servicesData = [
     id: 'sales-process',
     title: 'Sales Process Optimization',
     description: 'Streamline your sales operations for maximum efficiency.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: salesProcessImage,
     longDescription: 'Our Sales Process Optimization service helps you streamline your sales operations, eliminate bottlenecks, and maximize efficiency. We analyze your current process and implement improvements that drive results.',
     benefits: [
       'Streamline your sales workflow',
@@ -97,7 +103,7 @@ export const servicesData = [
     id: 'performance-metrics',
     title: 'Performance Metrics',
     description: 'Measure and improve your sales team\'s performance.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: performanceMetricsImage,
     longDescription: 'Our Performance Metrics service helps you measure and improve your sales team\'s performance through data-driven insights. We develop KPIs, dashboards, and coaching frameworks that drive continuous improvement.',
     benefits: [
       'Gain visibility into sales performance',

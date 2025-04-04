@@ -1,6 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import OptimizedImage from '../components/common/OptimizedImage.astro';
+import aboutTeamImage from '../assets/images/about/about-team.jpg';
+import teamMember1Image from '../assets/images/about/team-member-1.jpg';
+import teamMember2Image from '../assets/images/about/team-member-2.jpg';
 ---
 
 <MainLayout
@@ -37,12 +40,11 @@ import OptimizedImage from '../components/common/OptimizedImage.astro';
         </div>
         <div class="relative h-96 animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
           <OptimizedImage
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src={aboutTeamImage}
             alt="Team meeting in a modern office"
             class="w-full h-full object-cover rounded-lg shadow-lg"
             width={2070}
             height={1380}
-            loading="eager"
           />
         </div>
       </div>
@@ -101,12 +103,11 @@ import OptimizedImage from '../components/common/OptimizedImage.astro';
         <div class="text-center animate-on-scroll">
           <div class="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4">
             <OptimizedImage
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-              alt="John Doe"
+              src={teamMember1Image}
+              alt="Elie Rizkallah"
               class="w-full h-full object-cover"
               width={774}
               height={774}
-              loading='eager'
             />
           </div>
           <h3 class="text-xl font-bold mb-1">Elie Rizkallah</h3>
@@ -117,12 +118,11 @@ import OptimizedImage from '../components/common/OptimizedImage.astro';
         <div class="text-center animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
           <div class="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4">
             <OptimizedImage
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80"
-              alt="Jane Smith"
+              src={teamMember2Image}
+              alt="Kevin Abou Hanna"
               class="w-full h-full object-cover"
               width={776}
               height={776}
-              loading='eager'
             />
           </div>
           <h3 class="text-xl font-bold mb-1">Kevin Abou Hanna</h3>

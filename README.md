@@ -95,6 +95,8 @@ This site is deployed on Netlify with the following configuration:
 
 ## �🔮 Future Improvements
 
+- Replace stock images with compressed JPGs or Webp
+- Update meta image, favicon and logo (Brand Identity)
 - Integrate Netlify's contact form submissions (Accessibility)
   - Test form submissions on production with an email
 - Consider downloading remote images to the  src/assets directory

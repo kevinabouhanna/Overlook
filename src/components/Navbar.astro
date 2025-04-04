@@ -11,7 +11,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="navbar">
+<nav class="navbar" id="main-navbar">
   <div class="navbar-container">
     <div class="navbar-logo">
       <a href="/">Overlook</a>
@@ -67,9 +67,15 @@ const currentPath = Astro.url.pathname;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .navbar.scrolled {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
   }
 
   .navbar-container {
@@ -87,6 +93,11 @@ const currentPath = Astro.url.pathname;
     font-weight: bold;
     color: black;
     text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navbar:not(.scrolled) .navbar-logo a {
+    color: black; /* Ensure logo is visible on transparent background */
   }
 
   .navbar-links {
@@ -102,7 +113,11 @@ const currentPath = Astro.url.pathname;
     font-weight: 500;
     padding: 0.5rem 0.75rem;
     border-radius: 0.375rem;
-    transition: color 0.2s;
+    transition: color 0.3s ease;
+  }
+
+  .navbar:not(.scrolled) .navbar-links a:not(.cta-button) {
+    color: black; /* Ensure links are visible on transparent background */
   }
 
   .navbar-links a:hover {
@@ -214,6 +229,7 @@ const currentPath = Astro.url.pathname;
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('main-navbar');
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
@@ -222,8 +238,24 @@ const currentPath = Astro.url.pathname;
         mobileMenu.classList.toggle('active');
       });
     }
+
+    // Scroll event handler for navbar styling
+    function handleScroll() {
+      if (navbar) {
+        if (window.scrollY > 10) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+    }
+
+    // Initial check in case page is loaded scrolled down
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
   });
 </script>
 
-<!-- Add padding to account for the fixed navbar -->
-<div style="height: 4rem;"></div>
+<!-- No spacer div needed for overlay effect -->

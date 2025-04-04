@@ -1,9 +1,9 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from "../layouts/MainLayout.astro";
 // OptimizedImage is not used on this page, but kept for reference
 // import OptimizedImage from '../components/common/OptimizedImage.astro';
-import ResponsiveImage from '../components/common/ResponsiveImage.astro';
-import heroImage from '../assets/images/hero/hero-office.jpg';
+import ResponsiveImage from "../components/common/ResponsiveImage.astro";
+import heroImage from "../assets/images/hero/hero-office.jpg";
 ---
 
 <MainLayout
@@ -12,112 +12,114 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
 >
   <!-- Schema.org JSON-LD markup for organization -->
   <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Overlook Sales Consulting",
-    "url": "https://overlook-sales.com",
-    "logo": "https://overlook-sales.com/images/logo.png",
-    "description": "Overlook helps businesses build, train, and optimize their sales teams for maximum performance.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "contact@overlook-sales.com",
-      "telephone": "+961 70 112 317"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "New Rawda, Street 5-12, Building 150",
-      "addressLocality": "Beirut",
-      "postalCode": "1107",
-      "addressCountry": "Lebanon"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/overlook-sales/",
-      "https://twitter.com/overlooksales"
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Overlook Sales Consulting",
+      "url": "https://overlook-sales.com",
+      "logo": "https://overlook-sales.com/images/logo.png",
+      "description": "Overlook helps businesses build, train, and optimize their sales teams for maximum performance.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@overlook-sales.com",
+        "telephone": "+961 70 112 317"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "New Rawda, Street 5-12, Building 150",
+        "addressLocality": "Beirut",
+        "postalCode": "1107",
+        "addressCountry": "Lebanon"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/overlook-sales/",
+        "https://twitter.com/overlooksales"
+      ]
+    }
   </script>
 
   <!-- Schema.org JSON-LD markup for reviews -->
   <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Overlook Sales Consulting Services",
-    "description": "Professional sales consulting services to help businesses improve their sales performance.",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "27",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Joseph Habib"
-        },
-        "datePublished": "2023-06-15",
-        "reviewBody": "Overlook transformed our sales team. Their training program was exactly what we needed to boost our performance."
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Overlook Sales Consulting Services",
+      "description": "Professional sales consulting services to help businesses improve their sales performance.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "27",
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Joseph Habib"
+          },
+          "datePublished": "2023-06-15",
+          "reviewBody": "Overlook transformed our sales team. Their training program was exactly what we needed to boost our performance."
         },
-        "author": {
-          "@type": "Person",
-          "name": "Tony Yachouh"
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Tony Yachouh"
+          },
+          "datePublished": "2023-07-22",
+          "reviewBody": "The sales process optimization service helped us streamline our operations and close deals faster. Highly recommended!"
         },
-        "datePublished": "2023-07-22",
-        "reviewBody": "The sales process optimization service helped us streamline our operations and close deals faster. Highly recommended!"
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Mazen Al Hajj"
-        },
-        "datePublished": "2023-08-10",
-        "reviewBody": "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
-      }
-    ]
-  }
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Mazen Al Hajj"
+          },
+          "datePublished": "2023-08-10",
+          "reviewBody": "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
+        }
+      ]
+    }
   </script>
 
   <!-- Schema.org JSON-LD markup for BreadcrumbList -->
   <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://overlook-sales.com"
-      }
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://overlook-sales.com"
+        }
+      ]
+    }
   </script>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center pt-24 relative overflow-hidden">
+  <section
+    class="min-h-screen flex items-center pt-24 relative overflow-hidden"
+  >
     <div class="absolute inset-0 z-0">
       <ResponsiveImage
         src={heroImage}
@@ -127,7 +129,7 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
         sizes="100vw"
         width={2070}
         height={1380}
-
+        loading="eager"
       />
       <div class="absolute inset-0 bg-white opacity-50"></div>
       <div class="absolute inset-0 bg-radial-gradient"></div>
@@ -140,7 +142,8 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
           <span class="inline-block">Hire.</span>
         </h1>
         <p class="text-xl md:text-2xl mb-12 text-gray-700">
-          We help businesses build trust in sales and hire the right people with confidence.
+          We help businesses build trust in sales and hire the right people with
+          confidence.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -166,27 +169,55 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          We offer comprehensive solutions to help you build and optimize your sales organization.
+          We offer comprehensive solutions to help you build and optimize your
+          sales organization.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            1
+          </div>
           <h3 class="text-xl font-bold mb-4">Sales Hiring</h3>
-          <p class="text-gray-700">We help you identify, attract, and hire top sales talent that fits your company culture and goals.</p>
+          <p class="text-gray-700">
+            We help you identify, attract, and hire top sales talent that fits
+            your company culture and goals.
+          </p>
         </div>
 
-        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md" style={{ transitionDelay: "0.2s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+        <div
+          class="animate-on-scroll bg-white p-8 rounded-lg shadow-md"
+          style={{ transitionDelay: "0.2s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            2
+          </div>
           <h3 class="text-xl font-bold mb-4">Sales Training</h3>
-          <p class="text-gray-700">Comprehensive training programs designed to equip your team with the skills they need to succeed.</p>
+          <p class="text-gray-700">
+            Comprehensive training programs designed to equip your team with the
+            skills they need to succeed.
+          </p>
         </div>
 
-        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md" style={{ transitionDelay: "0.4s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+        <div
+          class="animate-on-scroll bg-white p-8 rounded-lg shadow-md"
+          style={{ transitionDelay: "0.4s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            3
+          </div>
           <h3 class="text-xl font-bold mb-4">Performance Coaching</h3>
-          <p class="text-gray-700">Ongoing support and guidance to help your sales team develop their skills and exceed their targets.</p>
+          <p class="text-gray-700">
+            Ongoing support and guidance to help your sales team develop their
+            skills and exceed their targets.
+          </p>
         </div>
       </div>
 
@@ -205,9 +236,12 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          What Our Clients Say
+        </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Don't just take our word for it. Here's what our clients have to say about working with us.
+          Don't just take our word for it. Here's what our clients have to say
+          about working with us.
         </p>
       </div>
 
@@ -220,11 +254,16 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
             </div>
           </div>
           <p class="text-gray-700">
-            "Overlook transformed our sales organization. Their strategic approach to hiring and training has resulted in a 40% increase in our sales within just six months."
+            "Overlook transformed our sales organization. Their strategic
+            approach to hiring and training has resulted in a 40% increase in
+            our sales within just six months."
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.2s" }}
+        >
           <div class="mb-4">
             <div>
               <h3 class="font-bold text-lg">Tony Yachouh</h3>
@@ -232,7 +271,9 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
             </div>
           </div>
           <p class="text-gray-700">
-            "The sales process framework that Overlook implemented has streamlined our operations and given us clear visibility into our pipeline. It's been a game-changer."
+            "The sales process framework that Overlook implemented has
+            streamlined our operations and given us clear visibility into our
+            pipeline. It's been a game-changer."
           </p>
         </div>
       </div>
@@ -242,32 +283,35 @@ import heroImage from '../assets/images/hero/hero-office.jpg';
 
 <script>
   // Animation for hero title
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Hero title animation
-    const heroTitle = document.querySelector('.hero-title');
+    const heroTitle = document.querySelector(".hero-title");
     if (heroTitle) {
-      const spans = heroTitle.querySelectorAll('span');
+      const spans = heroTitle.querySelectorAll("span");
       spans.forEach((span, index) => {
         setTimeout(() => {
-          span.style.opacity = '1';
-          span.style.transform = 'translateY(0)';
-          span.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          span.style.opacity = "1";
+          span.style.transform = "translateY(0)";
+          span.style.transition = "opacity 0.5s ease, transform 0.5s ease";
         }, 300 * index);
       });
     }
 
     // Scroll animations
-    const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+    const animateOnScroll = document.querySelectorAll(".animate-on-scroll");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
-    animateOnScroll.forEach(element => {
+    animateOnScroll.forEach((element) => {
       observer.observe(element);
     });
   });

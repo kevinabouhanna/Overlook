@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   src: string | ImageMetadata;
@@ -7,9 +7,9 @@ interface Props {
   width?: number;
   height?: number;
   class?: string;
-  format?: 'webp' | 'avif' | 'png' | 'jpeg';
+  format?: "webp" | "avif" | "png" | "jpeg";
   quality?: number;
-  loading?: 'lazy' | 'eager';
+  loading?: "eager" | "lazy";
 }
 
 // We'll use any for now to avoid TypeScript errors with remote images
@@ -20,10 +20,10 @@ const {
   alt,
   width,
   height,
-  class: className = '',
-  format = 'webp',
+  class: className = "",
+  format = "webp",
   quality = 80,
-  loading = 'lazy'
+  loading = "eager",
 } = Astro.props;
 ---
 

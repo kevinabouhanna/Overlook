@@ -1,9 +1,9 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import OptimizedImage from '../components/common/OptimizedImage.astro';
-import aboutTeamImage from '../assets/images/about/about-team.jpg';
-import teamMember1Image from '../assets/images/about/team-member-1.jpg';
-import teamMember2Image from '../assets/images/about/team-member-2.jpg';
+import MainLayout from "../layouts/MainLayout.astro";
+import OptimizedImage from "../components/common/OptimizedImage.astro";
+import aboutTeamImage from "../assets/images/about/about-team.jpg";
+import teamMember1Image from "../assets/images/about/team-member-1.jpg";
+import teamMember2Image from "../assets/images/about/team-member-2.jpg";
 ---
 
 <MainLayout
@@ -16,7 +16,8 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">About Overlook</h1>
         <p class="text-xl text-gray-700 mb-8">
-          We're on a mission to transform how businesses build and optimize their sales teams.
+          We're on a mission to transform how businesses build and optimize
+          their sales teams.
         </p>
       </div>
     </div>
@@ -29,16 +30,26 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
         <div class="animate-on-scroll">
           <h2 class="text-3xl font-bold mb-6">Our Story</h2>
           <p class="text-gray-700 mb-4">
-            Overlook was founded in 2020 by a team of sales leaders who recognized a fundamental problem in how businesses approach sales team development.
+            Overlook was founded in 2020 by a team of sales leaders who
+            recognized a fundamental problem in how businesses approach sales
+            team development.
           </p>
           <p class="text-gray-700 mb-4">
-            Too often, companies hire sales professionals without a clear strategy, provide minimal training, and then wonder why they aren't hitting their targets.
+            Too often, companies hire sales professionals without a clear
+            strategy, provide minimal training, and then wonder why they aren't
+            hitting their targets.
           </p>
           <p class="text-gray-700">
-            We set out to change this by creating a comprehensive approach to sales team development that addresses the entire lifecycle - from hiring and onboarding to training, process optimization, and ongoing performance coaching.
+            We set out to change this by creating a comprehensive approach to
+            sales team development that addresses the entire lifecycle - from
+            hiring and onboarding to training, process optimization, and ongoing
+            performance coaching.
           </p>
         </div>
-        <div class="relative h-96 animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
+        <div
+          class="relative h-96 animate-on-scroll"
+          style={{ transitionDelay: "0.2s" }}
+        >
           <OptimizedImage
             src={aboutTeamImage}
             alt="Team meeting in a modern office"
@@ -63,26 +74,47 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll">
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            1
+          </div>
           <h3 class="text-xl font-bold mb-4">Results-Driven</h3>
           <p class="text-gray-700">
-            We measure our success by the tangible results we deliver for our clients. If you're not succeeding, we're not succeeding.
+            We measure our success by the tangible results we deliver for our
+            clients. If you're not succeeding, we're not succeeding.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.2s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            2
+          </div>
           <h3 class="text-xl font-bold mb-4">Continuous Improvement</h3>
           <p class="text-gray-700">
-            We believe in constantly refining our methods based on data and feedback to deliver ever-improving outcomes.
+            We believe in constantly refining our methods based on data and
+            feedback to deliver ever-improving outcomes.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.4s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.4s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            3
+          </div>
           <h3 class="text-xl font-bold mb-4">People-First</h3>
           <p class="text-gray-700">
-            We understand that sales is fundamentally about human connections. We prioritize the people behind the numbers.
+            We understand that sales is fundamentally about human connections.
+            We prioritize the people behind the numbers.
           </p>
         </div>
       </div>
@@ -108,14 +140,20 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
               class="w-full h-full object-cover"
               width={774}
               height={774}
+              loading="lazy"
             />
           </div>
           <h3 class="text-xl font-bold mb-1">Elie Rizkallah</h3>
           <p class="text-gray-600 mb-2">Founder</p>
-          <p class="text-gray-700">15+ years leading sales teams at top Lebanese and GCC companies.</p>
+          <p class="text-gray-700">
+            15+ years leading sales teams at top Lebanese and GCC companies.
+          </p>
         </div>
 
-        <div class="text-center animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
+        <div
+          class="text-center animate-on-scroll"
+          style={{ transitionDelay: "0.2s" }}
+        >
           <div class="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4">
             <OptimizedImage
               src={teamMember2Image}
@@ -123,11 +161,14 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
               class="w-full h-full object-cover"
               width={776}
               height={776}
+              loading="lazy"
             />
           </div>
           <h3 class="text-xl font-bold mb-1">Kevin Abou Hanna</h3>
           <p class="text-gray-600 mb-2">Co-Founder</p>
-          <p class="text-gray-700">A psychology student that is passionate about sales and people.</p>
+          <p class="text-gray-700">
+            A psychology student that is passionate about sales and people.
+          </p>
         </div>
       </div>
     </div>
@@ -137,9 +178,12 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Sales Team?</h2>
+        <h2 class="text-3xl font-bold mb-6">
+          Ready to Transform Your Sales Team?
+        </h2>
         <p class="text-xl text-gray-700 mb-8">
-          Let's discuss how we can help you build, train, and optimize your sales organization.
+          Let's discuss how we can help you build, train, and optimize your
+          sales organization.
         </p>
         <a
           href="/contact"
@@ -154,18 +198,21 @@ import teamMember2Image from '../assets/images/about/team-member-2.jpg';
 
 <script>
   // Scroll animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+  document.addEventListener("DOMContentLoaded", () => {
+    const animateOnScroll = document.querySelectorAll(".animate-on-scroll");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
-    animateOnScroll.forEach(element => {
+    animateOnScroll.forEach((element) => {
       observer.observe(element);
     });
   });

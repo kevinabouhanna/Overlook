@@ -1,18 +1,18 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 
 interface Props {
   src: string | ImageMetadata;
   alt: string;
   widths: number[];
   sizes: string;
-  width: number;  // Required for remote images
+  width: number; // Required for remote images
   height: number; // Required for remote images
   class?: string;
-  formats?: Array<'webp' | 'avif' | 'png' | 'jpeg'>;
+  formats?: Array<"webp" | "avif" | "png" | "jpeg">;
   quality?: number;
   pictureAttributes?: Record<string, any>;
-  loading?: 'lazy' | 'eager';
+  loading?: "lazy" | "eager";
 }
 
 const {
@@ -20,13 +20,13 @@ const {
   alt,
   widths,
   sizes,
-  width,  // Required for remote images
+  width, // Required for remote images
   height, // Required for remote images
-  class: className = '',
-  formats = ['webp', 'jpeg'],
+  class: className = "",
+  formats = ["webp", "jpeg"],
   quality = 80,
   pictureAttributes = {},
-  loading = 'lazy'
+  loading = Astro.url.pathname === "/" ? "eager" : "lazy",
 } = Astro.props;
 ---
 

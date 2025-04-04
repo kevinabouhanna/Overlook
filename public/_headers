@@ -1,0 +1,24 @@
+# Cache Google Fonts resources for 1 year
+https://fonts.googleapis.com/*
+  Cache-Control: public, max-age=31536000, immutable
+
+https://fonts.gstatic.com/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache static assets for 1 year
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache CSS and JS for 1 week (in case you need to update them)
+*.css
+  Cache-Control: public, max-age=604800
+
+*.js
+  Cache-Control: public, max-age=604800
+
+# HTML files should not be cached aggressively
+*.html
+  Cache-Control: public, max-age=0, must-revalidate

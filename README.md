@@ -113,3 +113,9 @@ This site is deployed on Netlify with the following configuration:
   - Testimonial carousel (UX)
   - Interactive FAQ accordion (UX)
   - Add breadcrumbs to Service page (UX)
+  - Email and mobile links should be clickable (UX)
+
+Dev Features
+  - Add primary, secondary and tertiary to colors
+    - Tokenize the design system (DX)
+  - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)

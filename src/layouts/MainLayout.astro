@@ -35,6 +35,7 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Overlook" />
+    <meta name="robots" content="index, follow" />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -44,6 +45,16 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@abouhanna" />
     <meta name="twitter:image" content={ogImage} />
+
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+
+    <!-- Google Fonts: Belanosima for logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook" />
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook" rel="stylesheet" />
+
+    <slot name="head" />
   </head>
   <body>
     <header>

@@ -2,10 +2,11 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout 
+<MainLayout
   title="Page Not Found - Overlook"
   description="The page you are looking for could not be found."
 >
+  <meta name="robots" content="noindex, nofollow" slot="head" />
   <section class="py-20">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
@@ -15,14 +16,14 @@ import MainLayout from '../layouts/MainLayout.astro';
           The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="/" 
+          <a
+            href="/"
             class="bg-black text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-800 transition-colors"
           >
             Go Home
           </a>
-          <a 
-            href="/contact" 
+          <a
+            href="/contact"
             class="bg-white text-black border-2 border-black px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors"
           >
             Contact Us

@@ -1,4 +1,4 @@
-/* 
+/*
  * Consolidated Utilities CSS
  * This file contains all custom utility classes organized by category
  */
@@ -296,6 +296,9 @@ body {
 .font-bold { font-weight: 700; }
 .text-center { text-align: center; }
 
+/* Font Families */
+.font-belanosima { font-family: 'Belanosima', sans-serif; }
+
 /* Text Colors */
 .text-white { color: #fff; }
 .text-black { color: #000; }
@@ -434,16 +437,16 @@ body {
   .md\:table { display: table; }
   .md\:grid { display: grid; }
   .md\:hidden { display: none; }
-  
+
   /* Layout */
   .md\:flex-row { flex-direction: row; }
   .md\:justify-center { justify-content: center; }
-  
+
   /* Grid */
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  
+
   /* Spacing */
   .md\:p-8 { padding: 2rem; }
   .md\:px-4 { padding-left: 1rem; padding-right: 1rem; }
@@ -456,7 +459,7 @@ body {
   .md\:ml-8 { margin-left: 2rem; }
   .md\:gap-8 { gap: 2rem; }
   .md\:gap-12 { gap: 3rem; }
-  
+
   /* Typography */
   .md\:text-xs { font-size: 0.75rem; }
   .md\:text-sm { font-size: 0.875rem; }
@@ -470,7 +473,7 @@ body {
   .md\:text-6xl { font-size: 3.75rem; }
   .md\:text-7xl { font-size: 4.5rem; }
   .md\:text-8xl { font-size: 6rem; }
-  
+
   /* Sizing */
   .md\:w-16 { width: 4rem; }
 }

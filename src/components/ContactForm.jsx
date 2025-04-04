@@ -78,7 +78,7 @@ const ContactForm = () => {
         setFormStatus({
           submitted: true,
           error: false,
-          message: '',
+          message: 'Message sent successfully! We\'ll get back to you soon.',
           submitting: false
         });
 
@@ -110,9 +110,54 @@ const ContactForm = () => {
       });
   };
 
+  // For testing purposes only - remove in production
+  const simulateError = () => {
+    setFormStatus({
+      submitted: false,
+      error: true,
+      message: 'There was a problem sending your message. Please try again.',
+      submitting: false
+    });
+    toast.error('There was a problem sending your message. Please try again.', {
+      duration: 5000,
+      position: 'bottom-right',
+    });
+  };
+
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+
+      {/* Test buttons - remove in production */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="flex space-x-2 mb-4">
+          <button
+            type="button"
+            onClick={simulateError}
+            className="px-3 py-1 text-xs bg-red-100 text-red-800 rounded hover:bg-red-200"
+          >
+            Test Error State
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setFormStatus({
+                submitted: true,
+                error: false,
+                message: 'Message sent successfully! We\'ll get back to you soon.',
+                submitting: false
+              });
+              toast.success('Message sent successfully! We\'ll get back to you soon.', {
+                duration: 5000,
+                position: 'bottom-right',
+              });
+            }}
+            className="px-3 py-1 text-xs bg-green-100 text-green-800 rounded hover:bg-green-200"
+          >
+            Test Success State
+          </button>
+        </div>
+      )}
 
       {formStatus.submitted ? (
         <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6">

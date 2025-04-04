@@ -95,6 +95,7 @@ This site is deployed on Netlify with the following configuration:
 
 ## �🔮 Future Improvements
 
+- Test form submissions on production with an email
 - Consider downloading remote images to the  src/assets directory
   - Update image paths in data files to use local images
   - Once updated remove loading="eager" to default to lazy loading.

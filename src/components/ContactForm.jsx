@@ -180,6 +180,7 @@ const ContactForm = () => {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
+        autoComplete="on"
       >
         {/* Netlify form requirements */}
         <input type="hidden" name="form-name" value="contact" />
@@ -201,6 +202,7 @@ const ContactForm = () => {
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
               required
+              autoComplete="given-name"
             />
           </div>
           <div>
@@ -214,6 +216,7 @@ const ContactForm = () => {
               value={formData.lastName}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              autoComplete="family-name"
             />
           </div>
         </div>
@@ -230,6 +233,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
             required
+            autoComplete="email"
           />
         </div>
 
@@ -244,6 +248,7 @@ const ContactForm = () => {
             value={formData.company}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            autoComplete="organization"
           />
         </div>
 
@@ -259,6 +264,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
             required
+            autoComplete="off"
           ></textarea>
         </div>
 

@@ -102,7 +102,6 @@ This site is deployed on Netlify with the following configuration:
 - Update meta image, favicon and logo (Brand Identity)
 - Integrate Netlify's contact form submissions (Accessibility)
   - Test form submissions on production with an email
-- Move component-specific styles to their components (DX)
 
 - Features:
   - Add WhatsApp button (Accessibility)
@@ -118,6 +117,7 @@ This site is deployed on Netlify with the following configuration:
 
 Dev Features
 
+- Move component-specific styles to their components (DX)
 - Add primary, secondary and tertiary to colors
   - Tokenize the design system (DX)
 - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)

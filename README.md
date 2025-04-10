@@ -101,9 +101,11 @@ This site is deployed on Netlify with the following configuration:
 - Replace stock images with compressed JPGs or Webp
 - Update meta image, favicon and logo (Brand Identity)
 - Integrate Netlify's contact form submissions (Accessibility)
+
   - Test form submissions on production with an email
 
 - Features:
+
   - AI Chat bot, strictly on business topic
   - Add WhatsApp button
   - Add dark mode support
@@ -117,10 +119,13 @@ This site is deployed on Netlify with the following configuration:
   - Change Performance Metrics card's image
 
 - Dev Features:
-  - Setup Decap CMS with admin authentication to edit testimonials 
+  - Use Partytown for GTM + Hotjar integration (helps with multithreading)
+    - Use simple cookie consent [https://github.com/orestbida/cookieconsent](https://github.com/orestbida/cookieconsent), with Cookie preferences in the footer
+  - Setup Decap CMS with admin authentication to edit testimonials
   - Move component-specific styles to their components
     - Move SVGs to assets, don't add SVG in the html, import it instead
   - Add primary, secondary and tertiary to colors
     - Use Panda CSS (supports tokenization)
     - Tokenize the design system
   - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup
+  - Test Accessibility using Axe

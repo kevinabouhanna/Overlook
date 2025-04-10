@@ -104,20 +104,21 @@ This site is deployed on Netlify with the following configuration:
   - Test form submissions on production with an email
 
 - Features:
-  - Add WhatsApp button (Accessibility)
-  - Add dark mode support (Accessibility)
-  - Add Google Calendar integration for scheduling (UX)
-  - Add a blur-up placeholder effect for lazy-loaded images to (UX)
-  - Use Framer Motion for advanced animation (UX)
-  - Testimonial carousel (UX)
-  - Interactive FAQ accordion (UX)
-  - Add breadcrumbs to Service page (UX)
-  - Email and mobile links should be clickable (UX)
-  - Change Performance Metrics card's image (UX)
+  - AI Chat bot, strictly on business topic
+  - Add WhatsApp button
+  - Add dark mode support
+  - Add Google Calendar integration for scheduling
+  - Add a blur-up placeholder effect for lazy-loaded images
+  - Use Framer Motion for advanced animation
+  - Testimonial carousel
+  - Interactive FAQ accordion
+  - Add breadcrumbs to Service page
+  - Email and mobile links should be clickable
+  - Change Performance Metrics card's image
 
-Dev Features
+- Dev Features
 
-- Move component-specific styles to their components (DX)
-- Add primary, secondary and tertiary to colors
-  - Tokenize the design system (DX)
-- Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)
+  - Move component-specific styles to their components (DX)
+  - Add primary, secondary and tertiary to colors
+    - Tokenize the design system (DX)
+  - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)

@@ -4,21 +4,21 @@ const currentYear = new Date().getFullYear();
 // Define footer links
 const footerLinks = {
   company: [
-    { href: '/about', text: 'About Us' },
-    { href: '/services', text: 'Services' },
-    { href: '/contact', text: 'Contact' }
+    { href: "/about", text: "About Us" },
+    { href: "/services", text: "Services" },
+    { href: "/contact", text: "Contact" },
   ],
   services: [
-    { href: '/services/sales-hiring', text: 'Sales Hiring' },
-    { href: '/services/sales-training', text: 'Sales Training' },
-    { href: '/services/sales-process', text: 'Sales Process' },
-    { href: '/services/performance-metrics', text: 'Performance Metrics' }
+    { href: "/services/sales-hiring", text: "Sales Hiring" },
+    { href: "/services/sales-training", text: "Sales Training" },
+    { href: "/services/sales-process", text: "Sales Process" },
+    { href: "/services/performance-metrics", text: "Performance Metrics" },
   ],
   legal: [
-    { href: '/legal/privacy-policy', text: 'Privacy Policy' },
-    { href: '/legal/terms', text: 'Terms of Service' },
-    { href: '/legal/cookies', text: 'Cookie Policy' }
-  ]
+    { href: "/legal/privacy-policy", text: "Privacy Policy" },
+    { href: "/legal/terms", text: "Terms of Service" },
+    { href: "/legal/cookies", text: "Cookie Policy" },
+  ],
 };
 ---
 
@@ -31,13 +31,41 @@ const footerLinks = {
           Building high-performance sales teams for businesses of all sizes.
         </p>
         <div class="flex space-x-4">
-          <a href="https://linkedin.com/company/overlook" target="_blank" rel="noopener noreferrer" class="rounded-full">
+          <a
+            href="https://linkedin.com/company/overlook"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full"
+          >
             <span class="sr-only">LinkedIn</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="#000000"
+              viewBox="0 0 256 256"
+              ><path
+                d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
+              ></path></svg
+            >
           </a>
-          <a href="https://www.instagram.com/overlooksales/" target="_blank" rel="noopener noreferrer" class="rounded-full">
+          <a
+            href="https://www.instagram.com/overlooksales/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full"
+          >
             <span class="sr-only">Instagram</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="#000000"
+              viewBox="0 0 256 256"
+              ><path
+                d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+              ></path></svg
+            >
           </a>
         </div>
       </div>
@@ -45,39 +73,45 @@ const footerLinks = {
       <div>
         <h3 class="text-lg font-bold mb-4">Company</h3>
         <ul class="space-y-2">
-          {footerLinks.company.map(link => (
-            <li>
-              <a href={link.href} class="text-gray-600 hover:text-black">
-                {link.text}
-              </a>
-            </li>
-          ))}
+          {
+            footerLinks.company.map((link) => (
+              <li>
+                <a href={link.href} class="text-gray-600 hover:text-black">
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div>
         <h3 class="text-lg font-bold mb-4">Services</h3>
         <ul class="space-y-2">
-          {footerLinks.services.map(link => (
-            <li>
-              <a href={link.href} class="text-gray-600 hover:text-black">
-                {link.text}
-              </a>
-            </li>
-          ))}
+          {
+            footerLinks.services.map((link) => (
+              <li>
+                <a href={link.href} class="text-gray-600 hover:text-black">
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div>
         <h3 class="text-lg font-bold mb-4">Legal</h3>
         <ul class="space-y-2">
-          {footerLinks.legal.map(link => (
-            <li>
-              <a href={link.href} class="text-gray-600 hover:text-black">
-                {link.text}
-              </a>
-            </li>
-          ))}
+          {
+            footerLinks.legal.map((link) => (
+              <li>
+                <a href={link.href} class="text-gray-600 hover:text-black">
+                  {link.text}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>

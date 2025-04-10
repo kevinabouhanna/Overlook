@@ -118,7 +118,8 @@ This site is deployed on Netlify with the following configuration:
 
 - Dev Features:
   - Setup Decap CMS with admin authentication to edit testimonials 
-  - Move component-specific styles to their components (DX)
+  - Move component-specific styles to their components
+    - Move SVGs to assets, don't add SVG in the html, import it instead
   - Add primary, secondary and tertiary to colors
-    - Tokenize the design system (DX)
-  - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup (SEO)
+    - Tokenize the design system
+  - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup

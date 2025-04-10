@@ -4,7 +4,7 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 
 ## 🚀 Tech Stack
 
-- **Framework**: [Astro](https://astro.build) (migrated from React)
+- **Framework**: [Astro](https://astro.build)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com) with Vite plugin integration
 - **UI Components**: Custom components with [shadcn/ui](https://ui.shadcn.com) integration
 - **Animations**: [Framer Motion](https://www.framer.com/motion/) for interactive animations
@@ -141,7 +141,7 @@ This site is deployed on Netlify with the following configuration:
 - Consistent styling across all pages
 - Testimonials with proper attribution
 
-## �🔮 Future Improvements
+## 🔮 Future Improvements
 
 - Replace stock images with compressed JPGs or Webp
 - Update meta image, favicon and logo (Brand Identity)

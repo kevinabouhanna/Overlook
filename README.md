@@ -121,5 +121,6 @@ This site is deployed on Netlify with the following configuration:
   - Move component-specific styles to their components
     - Move SVGs to assets, don't add SVG in the html, import it instead
   - Add primary, secondary and tertiary to colors
+    - Use Panda CSS (supports tokenization)
     - Tokenize the design system
   - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup

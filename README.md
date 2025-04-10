@@ -116,8 +116,8 @@ This site is deployed on Netlify with the following configuration:
   - Email and mobile links should be clickable
   - Change Performance Metrics card's image
 
-- Dev Features
-
+- Dev Features:
+  - Setup Decap CMS with admin authentication to edit testimonials 
   - Move component-specific styles to their components (DX)
   - Add primary, secondary and tertiary to colors
     - Tokenize the design system (DX)

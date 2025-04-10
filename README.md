@@ -7,6 +7,7 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 - **Framework**: [Astro](https://astro.build) (migrated from React)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com) with Vite plugin integration
 - **UI Components**: Custom components with [shadcn/ui](https://ui.shadcn.com) integration
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) for interactive animations
 - **Deployment**: [Netlify](https://netlify.com)
 
 ## 📂 Project Structure
@@ -14,10 +15,15 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 ```text
 /
 ├── public/              # Static assets
+│   ├── _headers         # Custom headers for Netlify (caching, security)
+│   └── ...              # Other static assets (favicon, robots.txt, etc.)
 ├── src/
+│   ├── assets/          # Local images and assets
+│   │   └── images/      # Optimized images used throughout the site
 │   ├── components/      # Reusable UI components
+│   │   ├── common/      # Common components (ResponsiveImage, OptimizedImage)
 │   │   ├── ui/          # shadcn/ui components
-│   │   └── ...          # Other components (Navbar, Footer, etc.)
+│   │   └── ...          # Other components (Navbar, Footer, BackgroundPaths, etc.)
 │   ├── data/            # Data files (services.js, etc.)
 │   ├── layouts/         # Layout components
 │   │   └── MainLayout.astro
@@ -27,7 +33,9 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 │   │   └── ...          # Other pages
 │   └── styles/          # Global styles
 │       ├── global.css   # Tailwind directives and CSS variables
+│       ├── colors.css   # Color-specific styles
 │       └── utilities.css # Custom utility classes
+├── netlify.toml         # Netlify configuration (redirects, headers, build settings)
 └── package.json
 ```
 
@@ -78,23 +86,60 @@ This site is deployed on Netlify with the following configuration:
 - **Routing**: Astro's file-based routing system
 - **Dynamic Routes**: Using `[serviceId].astro` for service detail pages
 - **Static Generation**: All pages pre-rendered at build time
-- **Minimal JavaScript**: Only where needed for interactivity
-
-## � SEO Enhancements
-
-- Static HTML generation for better search engine indexing
-- Proper metadata and Open Graph tags
-- Automatically generated sitemap
-- Configured robots.txt
+- **Islands Architecture**: Interactive components using React and Framer Motion
+- **Client Directives**: Using `client:load` for interactive components
 
 ## 🎨 CSS Architecture
 
 - **Tailwind Integration**: Using Vite plugin for optimal performance
 - **CSS Structure**:
   - `global.css` - Tailwind directives and CSS variables
+  - `colors.css` - Color-specific styles and feedback states
   - `utilities.css` - Custom utility classes organized by category
-- **shadcn/ui Integration**: Using CSS variables for theming
-- **Documentation**: See [Tailwind Integration Guide](docs/tailwind-integration.md)
+- **shadcn/ui Integration**: Using CSS variables for theming with the 'new-york' style variant
+- **Responsive Design**: Mobile-first approach with tailored experiences for all device sizes
+
+## � Key Features
+
+### Performance Optimizations
+
+- Efficient caching policies for static assets and Google Fonts
+- Image optimization with proper loading strategies (eager for above-the-fold, lazy for below)
+- Minimal JavaScript with islands architecture for interactive components
+
+### Visual Enhancements
+
+- Animated hero section using Framer Motion with floating path animations
+- Consistent white gradient overlays with radial gradients across hero sections and cards
+- Scroll-triggered animations for content sections
+- Responsive design with mobile-first approach
+
+### SEO Implementation
+
+- Static HTML generation for better search engine indexing
+- Schema.org JSON-LD markup for Organization, Services, Testimonials, BreadcrumbList, and FAQs
+- Proper metadata and Open Graph tags
+- Proper heading structure and semantic HTML
+- Descriptive link text instead of generic "Learn More" links
+- Automatically generated sitemap
+- Configured robots.txt
+- Optimized caching for Google Fonts and static assets
+- Proper image optimization with eager loading for above-the-fold content
+
+### Accessibility Features
+
+- Proper heading hierarchy for screen readers
+- Descriptive alt text for all images
+- Keyboard navigable interface
+- Form labels and autocomplete attributes
+- Sufficient color contrast ratios
+
+### Content Organization
+
+- Clear navigation structure
+- Service-specific detail pages
+- Consistent styling across all pages
+- Testimonials with proper attribution
 
 ## �🔮 Future Improvements
 
@@ -111,7 +156,6 @@ This site is deployed on Netlify with the following configuration:
   - Add dark mode support
   - Add Google Calendar integration for scheduling
   - Add a blur-up placeholder effect for lazy-loaded images
-  - Use Framer Motion for advanced animation
   - Testimonial carousel
   - Interactive FAQ accordion
   - Add breadcrumbs to Service page
@@ -128,4 +172,4 @@ This site is deployed on Netlify with the following configuration:
     - Use Panda CSS (supports tokenization)
     - Tokenize the design system
   - Use Google's Rich Results Test or Schema Markup Validator to verify your schema markup
-  - Test Accessibility using Axe
+  - Update pipeline using axe-core and/or lighthouse linter

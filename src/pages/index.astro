@@ -1,9 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-// OptimizedImage is not used on this page, but kept for reference
-// import OptimizedImage from '../components/common/OptimizedImage.astro';
-import ResponsiveImage from "../components/common/ResponsiveImage.astro";
-import heroImage from "../assets/images/hero/hero-office.jpg";
+// Removed unused imports
+import BackgroundPaths from "../components/BackgroundPaths.jsx";
 ---
 
 <MainLayout
@@ -117,52 +115,15 @@ import heroImage from "../assets/images/hero/hero-office.jpg";
   </script>
 
   <!-- Hero Section -->
-  <section
-    class="min-h-screen flex items-center pt-24 relative overflow-hidden"
-  >
-    <div class="absolute inset-0 z-0">
-      <ResponsiveImage
-        src={heroImage}
-        alt="Modern office space with natural light"
-        class="w-full h-full object-cover"
-        widths={[400, 800, 1200, 2000]}
-        sizes="100vw"
-        width={2070}
-        height={1380}
-        format="webp"
-        loading="eager"
-      />
-      <div class="absolute inset-0 bg-white opacity-50"></div>
-      <div class="absolute inset-0 bg-radial-gradient"></div>
-    </div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-5xl md:text-7xl font-bold mb-8 hero-title text-black">
-          <span class="inline-block">Build.</span>{" "}
-          <span class="inline-block">Trust.</span>{" "}
-          <span class="inline-block">Hire.</span>
-        </h1>
-        <p class="text-xl md:text-2xl mb-12 text-gray-700">
-          We help businesses build trust in sales and hire the right people with
-          confidence.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
-            class="bg-black text-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-800 transition-colors"
-          >
-            Get Started
-          </a>
-          <a
-            href="/services"
-            class="bg-white text-black border-2 border-black px-6 py-3 rounded-md text-base font-medium hover:bg-gray-100 transition-colors"
-          >
-            Our Services
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <BackgroundPaths
+    title="Build. Trust. Hire."
+    subtitle="We help businesses build trust in sales and hire the right people with confidence."
+    primaryButtonText="Get Started"
+    primaryButtonLink="/contact"
+    secondaryButtonText="Our Services"
+    secondaryButtonLink="/services"
+    client:load
+  />
 
   <!-- Services Overview Section -->
   <section class="py-20 bg-white">
@@ -283,21 +244,8 @@ import heroImage from "../assets/images/hero/hero-office.jpg";
 </MainLayout>
 
 <script>
-  // Animation for hero title
+  // Animation for scroll elements
   document.addEventListener("DOMContentLoaded", () => {
-    // Hero title animation
-    const heroTitle = document.querySelector(".hero-title");
-    if (heroTitle) {
-      const spans = heroTitle.querySelectorAll("span");
-      spans.forEach((span, index) => {
-        setTimeout(() => {
-          span.style.opacity = "1";
-          span.style.transform = "translateY(0)";
-          span.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        }, 300 * index);
-      });
-    }
-
     // Scroll animations
     const animateOnScroll = document.querySelectorAll(".animate-on-scroll");
 
@@ -309,7 +257,7 @@ import heroImage from "../assets/images/hero/hero-office.jpg";
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     animateOnScroll.forEach((element) => {

@@ -156,7 +156,7 @@ This site is deployed on Netlify with the following configuration:
   - Add dark mode support
   - Add Google Calendar integration for scheduling
   - Add a blur-up placeholder effect for lazy-loaded images
-  - Testimonial carousel
+  - Testimonial carousel [Repo](https://github.com/johanguse/shadcn-carousel-testimonials)
   - Interactive FAQ accordion
   - Add breadcrumbs to Service page
   - Email and mobile links should be clickable
@@ -164,7 +164,7 @@ This site is deployed on Netlify with the following configuration:
 
 - Dev Features:
   - Use Partytown for GTM + Hotjar integration (helps with multithreading)
-    - Use simple cookie consent [https://github.com/orestbida/cookieconsent](https://github.com/orestbida/cookieconsent), with Cookie preferences in the footer
+    - Use simple cookie consent [Repo](https://github.com/orestbida/cookieconsent), with Cookie preferences in the footer
   - Setup Decap CMS with admin authentication to edit testimonials
   - Move component-specific styles to their components
     - Move SVGs to assets, don't add SVG in the html, import it instead

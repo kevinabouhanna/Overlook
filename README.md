@@ -151,6 +151,7 @@ This site is deployed on Netlify with the following configuration:
 
 - Features:
 
+  - Contact form netlify setup
   - AI Chat bot, strictly on business topic
   - Add WhatsApp button
   - Add dark mode support

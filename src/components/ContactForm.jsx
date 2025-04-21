@@ -56,13 +56,13 @@ const ContactForm = () => {
 
     // Get form data for submission
     const form = e.target;
-    const formDataForSubmission = new FormData(form);
 
-    // Submit the form data to Netlify
+    // Standard Netlify Forms submission
+    // This uses the default Netlify form handling endpoint
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formDataForSubmission).toString()
+      body: new URLSearchParams(new FormData(form)).toString()
     })
       .then(() => {
         // Show success toast

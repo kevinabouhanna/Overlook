@@ -1055,16 +1055,60 @@ body {
   color: #000;
 }
 
-.text-gray-200 {
-  color: #e5e7eb;
+/* Text colors as solid hex values (equivalent to previous opacity levels) */
+.text-gray-1000 {
+  color: #000000;
+  /* Equivalent to 100% black */
 }
 
-.text-gray-600 {
-  color: #4b5568;
+.text-gray-900 {
+  color: #1a1a1a;
+  /* Equivalent to 90% black */
+}
+
+.text-gray-800 {
+  color: #333333;
+  /* Equivalent to 80% black */
 }
 
 .text-gray-700 {
-  color: #4a5568;
+  color: #4d4d4d;
+  /* Equivalent to 70% black */
+}
+
+.text-gray-600 {
+  color: #666666;
+  /* Equivalent to 60% black */
+}
+
+.text-gray-500 {
+  color: #808080;
+  /* Equivalent to 50% black */
+}
+
+.text-gray-400 {
+  color: #999999;
+  /* Equivalent to 40% black */
+}
+
+.text-gray-300 {
+  color: #b3b3b3;
+  /* Equivalent to 30% black */
+}
+
+.text-gray-200 {
+  color: #cccccc;
+  /* Equivalent to 20% black */
+}
+
+.text-gray-100 {
+  color: #e6e6e6;
+  /* Equivalent to 10% black */
+}
+
+.text-gray-50 {
+  color: #f2f2f2;
+  /* Equivalent to 5% black */
 }
 
 /* ===== Visual Elements ===== */
@@ -1078,16 +1122,82 @@ body {
   background-color: #000;
 }
 
-.bg-gray-50 {
-  background-color: #f9fafb;
+/* Solid background colors for cards on dark backgrounds */
+.bg-dark-card {
+  background-color: #121212;
+  /* Slightly lighter than black */
 }
 
-.bg-gray-100 {
-  background-color: #f3f4f6;
+.bg-dark-card-hover:hover {
+  background-color: #1a1a1a;
+  /* Slightly lighter on hover */
+}
+
+/* Solid equivalents for opacity-based backgrounds */
+.bg-gray-900-solid {
+  background-color: #1a1a1a;
+  /* Equivalent to rgba(0, 0, 0, 0.9) */
+}
+
+.bg-gray-800-solid {
+  background-color: #333333;
+  /* Equivalent to rgba(0, 0, 0, 0.8) */
+}
+
+/* Gray scale based on black with decreasing opacity */
+.bg-gray-1000 {
+  background-color: rgba(0, 0, 0, 1);
+  /* 100% opacity */
+}
+
+.bg-gray-900 {
+  background-color: rgba(0, 0, 0, 0.9);
+  /* 90% opacity */
+}
+
+.bg-gray-800 {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* 80% opacity */
+}
+
+.bg-gray-700 {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* 70% opacity */
+}
+
+.bg-gray-600 {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 60% opacity */
+}
+
+.bg-gray-500 {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 50% opacity */
+}
+
+.bg-gray-400 {
+  background-color: rgba(0, 0, 0, 0.4);
+  /* 40% opacity */
+}
+
+.bg-gray-300 {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* 30% opacity */
 }
 
 .bg-gray-200 {
-  background-color: #e5e7eb;
+  background-color: rgba(0, 0, 0, 0.2);
+  /* 20% opacity */
+}
+
+.bg-gray-100 {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* 10% opacity */
+}
+
+.bg-gray-50 {
+  background-color: rgba(0, 0, 0, 0.05);
+  /* 5% opacity */
 }
 
 .bg-black\/50 {
@@ -1112,12 +1222,71 @@ body {
   border-color: #000;
 }
 
-.border-gray-200 {
-  border-color: #e5e7eb;
+/* Border colors based on black with decreasing opacity */
+.border-gray-1000 {
+  border-color: rgba(0, 0, 0, 1);
+  /* 100% opacity */
+}
+
+.border-gray-900 {
+  border-color: rgba(0, 0, 0, 0.9);
+  /* 90% opacity */
+}
+
+.border-gray-800 {
+  border-color: rgba(0, 0, 0, 0.8);
+  /* 80% opacity */
+}
+
+/* Solid equivalents for opacity-based borders */
+.border-gray-900-solid {
+  border-color: #1a1a1a;
+  /* Equivalent to rgba(0, 0, 0, 0.9) */
+}
+
+.border-gray-800-solid {
+  border-color: #333333;
+  /* Equivalent to rgba(0, 0, 0, 0.8) */
+}
+
+.border-gray-700 {
+  border-color: rgba(0, 0, 0, 0.7);
+  /* 70% opacity */
+}
+
+.border-gray-600 {
+  border-color: rgba(0, 0, 0, 0.6);
+  /* 60% opacity */
+}
+
+.border-gray-500 {
+  border-color: rgba(0, 0, 0, 0.5);
+  /* 50% opacity */
+}
+
+.border-gray-400 {
+  border-color: rgba(0, 0, 0, 0.4);
+  /* 40% opacity */
 }
 
 .border-gray-300 {
-  border-color: #d1d5db;
+  border-color: rgba(0, 0, 0, 0.3);
+  /* 30% opacity */
+}
+
+.border-gray-200 {
+  border-color: rgba(0, 0, 0, 0.2);
+  /* 20% opacity */
+}
+
+.border-gray-100 {
+  border-color: rgba(0, 0, 0, 0.1);
+  /* 10% opacity */
+}
+
+.border-gray-50 {
+  border-color: rgba(0, 0, 0, 0.05);
+  /* 5% opacity */
 }
 
 /* Rounded Corners */
@@ -1200,11 +1369,43 @@ body {
 
 /* Hover States */
 .hover\:bg-gray-100:hover {
-  background-color: #f3f4f6;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hover\:bg-gray-200:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hover\:bg-gray-300:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hover\:bg-gray-400:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hover\:bg-gray-500:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hover\:bg-gray-600:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hover\:bg-gray-700:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .hover\:bg-gray-800:hover {
-  background-color: #1f2937;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hover\:bg-gray-900:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.hover\:bg-gray-1000:hover {
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .hover\:bg-black:hover {
@@ -1217,6 +1418,51 @@ body {
 
 .hover\:text-black:hover {
   color: #000000;
+}
+
+/* Hover text-gray states with solid hex colors */
+.hover\:text-gray-1000:hover {
+  color: #000000;
+}
+
+.hover\:text-gray-900:hover {
+  color: #1a1a1a;
+}
+
+.hover\:text-gray-800:hover {
+  color: #333333;
+}
+
+.hover\:text-gray-700:hover {
+  color: #4d4d4d;
+}
+
+.hover\:text-gray-600:hover {
+  color: #666666;
+}
+
+.hover\:text-gray-500:hover {
+  color: #808080;
+}
+
+.hover\:text-gray-400:hover {
+  color: #999999;
+}
+
+.hover\:text-gray-300:hover {
+  color: #b3b3b3;
+}
+
+.hover\:text-gray-200:hover {
+  color: #cccccc;
+}
+
+.hover\:text-gray-100:hover {
+  color: #e6e6e6;
+}
+
+.hover\:text-gray-50:hover {
+  color: #f2f2f2;
 }
 
 /* ===== Animations ===== */
@@ -1433,4 +1679,64 @@ body {
   .md\:w-16 {
     width: 4rem;
   }
+}
+
+/* ===== Standardized Button Styles ===== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Primary Button - Black background with white text */
+.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+  border-color: #333333;
+}
+
+/* Secondary Button - White background with black border */
+.btn-secondary {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.btn-secondary:hover {
+  background-color: #f2f2f2;
+}
+
+/* Outline Button - Transparent background with border */
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Outline Dark Button - For use on light backgrounds */
+.btn-outline-dark {
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.btn-outline-dark:hover {
+  background-color: #000000;
+  color: #ffffff;
 }

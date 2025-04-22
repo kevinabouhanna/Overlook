@@ -118,78 +118,77 @@ import BackgroundPaths from "../components/BackgroundPaths.jsx";
   <BackgroundPaths
     title="Build. Trust. Hire."
     subtitle="We help businesses build trust in sales and hire the right people with confidence."
-    primaryButtonText="Get Started"
-    primaryButtonLink="/contact"
-    secondaryButtonText="Our Services"
-    secondaryButtonLink="/services"
+    primaryButtonText="Our Services"
+    primaryButtonLink="/services"
     client:load
   />
 
   <!-- Services Overview Section -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-black">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold my-4 text-white">
+          Our Services
+        </h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
           We offer comprehensive solutions to help you build and optimize your
           sales organization.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="animate-on-scroll bg-white p-8 rounded-lg shadow-md">
+        <div
+          class="animate-on-scroll bg-gray-900-solid p-8 rounded-lg shadow-md border border-gray-800-solid"
+        >
           <div
-            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+            class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center text-xl font-bold mb-6"
           >
             1
           </div>
-          <h3 class="text-xl font-bold mb-4">Sales Hiring</h3>
-          <p class="text-gray-700">
+          <h3 class="text-xl font-bold mb-4 text-white">Sales Hiring</h3>
+          <p class="text-gray-200">
             We help you identify, attract, and hire top sales talent that fits
             your company culture and goals.
           </p>
         </div>
 
         <div
-          class="animate-on-scroll bg-white p-8 rounded-lg shadow-md"
+          class="animate-on-scroll bg-gray-900-solid p-8 rounded-lg shadow-md border border-gray-800-solid"
           style={{ transitionDelay: "0.2s" }}
         >
           <div
-            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+            class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center text-xl font-bold mb-6"
           >
             2
           </div>
-          <h3 class="text-xl font-bold mb-4">Sales Training</h3>
-          <p class="text-gray-700">
+          <h3 class="text-xl font-bold mb-4 text-white">Sales Training</h3>
+          <p class="text-gray-200">
             Comprehensive training programs designed to equip your team with the
             skills they need to succeed.
           </p>
         </div>
 
         <div
-          class="animate-on-scroll bg-white p-8 rounded-lg shadow-md"
+          class="animate-on-scroll bg-gray-900-solid p-8 rounded-lg shadow-md border border-gray-800-solid"
           style={{ transitionDelay: "0.4s" }}
         >
           <div
-            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+            class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center text-xl font-bold mb-6"
           >
             3
           </div>
-          <h3 class="text-xl font-bold mb-4">Performance Coaching</h3>
-          <p class="text-gray-700">
+          <h3 class="text-xl font-bold mb-4 text-white">
+            Performance Coaching
+          </h3>
+          <p class="text-gray-200">
             Ongoing support and guidance to help your sales team develop their
             skills and exceed their targets.
           </p>
         </div>
       </div>
 
-      <div class="text-center mt-12 animate-on-scroll">
-        <a
-          href="/services"
-          class="border-2 border-black hover:bg-black hover:text-white transition-colors px-6 py-3 rounded-md text-base font-medium"
-        >
-          Discover More
-        </a>
+      <div class="text-center my-12 animate-on-scroll">
+        <a href="/services" class="btn btn-outline"> Discover More </a>
       </div>
     </div>
   </section>

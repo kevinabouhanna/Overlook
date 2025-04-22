@@ -46,10 +46,8 @@ function FloatingPaths({ position }) {
 export default function BackgroundPaths({
   title = "Build. Trust. Hire.",
   subtitle = "We help businesses build trust in sales and hire the right people with confidence.",
-  primaryButtonText = "Get Started",
-  primaryButtonLink = "/contact",
-  secondaryButtonText = "Our Services",
-  secondaryButtonLink = "/services"
+  primaryButtonText = "Our Services",
+  primaryButtonLink = "/services"
 }) {
   const words = title.split(" ")
 
@@ -99,15 +97,9 @@ export default function BackgroundPaths({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={primaryButtonLink}
-              className="bg-black text-white px-6 py-3 rounded-md text-base font-medium hover:bg-gray-800 transition-colors"
+              className="btn btn-primary"
             >
               {primaryButtonText}
-            </a>
-            <a
-              href={secondaryButtonLink}
-              className="bg-white text-black border-2 border-black px-6 py-3 rounded-md text-base font-medium hover:bg-gray-100 transition-colors"
-            >
-              {secondaryButtonText}
             </a>
           </div>
         </motion.div>

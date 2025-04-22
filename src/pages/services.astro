@@ -1,7 +1,7 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { servicesData } from '../data/services.js';
-import OptimizedImage from '../components/common/OptimizedImage.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import { servicesData } from "../data/services.js";
+import OptimizedImage from "../components/common/OptimizedImage.astro";
 
 // Use the imported services data
 const services = servicesData;
@@ -13,91 +13,96 @@ const services = servicesData;
 >
   <!-- Schema.org JSON-LD markup for services -->
   <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Overlook Sales Consulting",
-    "url": "https://overlook-sales.com/services",
-    "logo": "https://overlook-sales.com/images/logo.png",
-    "description": "Overlook Sales Consulting provides professional sales consulting services to help businesses improve their sales performance.",
-    "serviceType": ["Sales Hiring", "Sales Training", "Sales Process Optimization", "Performance Metrics"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Sales Consulting Services",
-      "itemListElement": [
-        {
-          "@type": "Service",
-          "serviceType": "Sales Hiring",
-          "name": "Sales Hiring",
-          "description": "Find and hire the right sales talent for your organization.",
-          "url": "https://overlook-sales.com/services/sales-hiring",
-          "provider": {
-            "@type": "Organization",
-            "name": "Overlook Sales Consulting"
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Overlook Sales Consulting",
+      "url": "https://overlook-sales.com/services",
+      "logo": "https://overlook-sales.com/images/logo.png",
+      "description": "Overlook Sales Consulting provides professional sales consulting services to help businesses improve their sales performance.",
+      "serviceType": [
+        "Sales Hiring",
+        "Sales Training",
+        "Sales Process Optimization",
+        "Performance Metrics"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sales Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "serviceType": "Sales Hiring",
+            "name": "Sales Hiring",
+            "description": "Find and hire the right sales talent for your organization.",
+            "url": "https://overlook-sales.com/services/sales-hiring",
+            "provider": {
+              "@type": "Organization",
+              "name": "Overlook Sales Consulting"
+            },
+            "position": 1
           },
-          "position": 1
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Sales Training",
-          "name": "Sales Training",
-          "description": "Equip your team with the skills they need to succeed.",
-          "url": "https://overlook-sales.com/services/sales-training",
-          "provider": {
-            "@type": "Organization",
-            "name": "Overlook Sales Consulting"
+          {
+            "@type": "Service",
+            "serviceType": "Sales Training",
+            "name": "Sales Training",
+            "description": "Equip your team with the skills they need to succeed.",
+            "url": "https://overlook-sales.com/services/sales-training",
+            "provider": {
+              "@type": "Organization",
+              "name": "Overlook Sales Consulting"
+            },
+            "position": 2
           },
-          "position": 2
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Sales Process Optimization",
-          "name": "Sales Process Optimization",
-          "description": "Streamline your sales operations for maximum efficiency.",
-          "url": "https://overlook-sales.com/services/sales-process",
-          "provider": {
-            "@type": "Organization",
-            "name": "Overlook Sales Consulting"
+          {
+            "@type": "Service",
+            "serviceType": "Sales Process Optimization",
+            "name": "Sales Process Optimization",
+            "description": "Streamline your sales operations for maximum efficiency.",
+            "url": "https://overlook-sales.com/services/sales-process",
+            "provider": {
+              "@type": "Organization",
+              "name": "Overlook Sales Consulting"
+            },
+            "position": 3
           },
-          "position": 3
-        },
-        {
-          "@type": "Service",
-          "serviceType": "Performance Metrics",
-          "name": "Performance Metrics",
-          "description": "Measure and improve your sales team's performance.",
-          "url": "https://overlook-sales.com/services/performance-metrics",
-          "provider": {
-            "@type": "Organization",
-            "name": "Overlook Sales Consulting"
-          },
-          "position": 4
-        }
-      ]
+          {
+            "@type": "Service",
+            "serviceType": "Performance Metrics",
+            "name": "Performance Metrics",
+            "description": "Measure and improve your sales team's performance.",
+            "url": "https://overlook-sales.com/services/performance-metrics",
+            "provider": {
+              "@type": "Organization",
+              "name": "Overlook Sales Consulting"
+            },
+            "position": 4
+          }
+        ]
+      }
     }
-  }
   </script>
 
   <!-- Schema.org JSON-LD markup for BreadcrumbList -->
   <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://overlook-sales.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://overlook-sales.com/services"
-      }
-    ]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://overlook-sales.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://overlook-sales.com/services"
+        }
+      ]
+    }
   </script>
   <!-- Hero Section -->
   <section class="py-20 bg-gray-50">
@@ -105,7 +110,8 @@ const services = servicesData;
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
         <p class="text-xl text-black mb-8">
-          Comprehensive solutions to help you build, train, and optimize your sales organization.
+          Comprehensive solutions to help you build, train, and optimize your
+          sales organization.
         </p>
       </div>
     </div>
@@ -115,40 +121,41 @@ const services = servicesData;
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {services.map((service, index) => (
-          <div class="service-card animate-on-scroll" style={{ transitionDelay: `${index * 0.1}s` }}>
-            <div class="service-card-overlay h-full">
-              <OptimizedImage
-                src={service.image}
-                alt={service.title}
-                class="absolute inset-0 w-full h-full object-cover"
-                width={800}
-                height={600}
-              />
-              <div class="absolute inset-0 bg-white opacity-80"></div>
-              <div class="relative z-10 p-8 h-full flex flex-col">
-                <h2 class="text-2xl font-bold mb-4 text-black">{service.title}</h2>
-                <p class="text-black mb-6">{service.description}</p>
-                <ul class="list-disc list-inside space-y-2 text-black mb-6">
-                  {Array.isArray(service.features)
-                    ? service.features.map(feature => (
-                        <li>{typeof feature === 'object' ? feature.title : feature}</li>
-                      ))
-                    : null
-                  }
-                </ul>
-                <div class="mt-auto">
-                  <a
-                    href={`/services/${service.id}`}
-                    class="inline-block text-black border-2 border-black px-6 py-2 rounded-md text-sm font-medium hover:bg-black hover:text-white transition-colors"
-                  >
-                    View {service.title}
-                  </a>
+        {
+          services.map((service, index) => (
+            <div
+              class="service-card animate-on-scroll"
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <div class="service-card-overlay h-full">
+                <OptimizedImage
+                  src={service.image}
+                  alt={service.title}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
+                <div class="absolute inset-0 bg-white opacity-80" />
+                <div class="gap-12 relative z-10 p-8 h-full flex flex-col">
+                  <div>
+                    <h2 class="text-2xl font-bold mb-4 text-black">
+                      {service.title}
+                    </h2>
+                    <p class="text-black mb-6">{service.description}</p>
+                  </div>
+                  <div class="mt-auto">
+                    <a
+                      href={`/services/${service.id}`}
+                      class="inline-block text-black border-2 border-black px-6 py-2 rounded-md text-sm font-medium hover:bg-black hover:text-white transition-colors"
+                    >
+                      View {service.title}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -165,34 +172,63 @@ const services = servicesData;
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll">
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            1
+          </div>
           <h3 class="text-xl font-bold mb-4">Assess</h3>
           <p class="text-black">
-            We start by thoroughly assessing your current sales organization, processes, and performance.
+            We start by thoroughly assessing your current sales organization,
+            processes, and performance.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.1s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.1s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            2
+          </div>
           <h3 class="text-xl font-bold mb-4">Plan</h3>
           <p class="text-black">
-            Based on our assessment, we develop a customized plan to address your specific challenges and goals.
+            Based on our assessment, we develop a customized plan to address
+            your specific challenges and goals.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.2s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.2s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            3
+          </div>
           <h3 class="text-xl font-bold mb-4">Implement</h3>
           <p class="text-black">
-            We work alongside your team to implement the plan, providing hands-on guidance and support.
+            We work alongside your team to implement the plan, providing
+            hands-on guidance and support.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-lg shadow-md animate-on-scroll" style={{ transitionDelay: "0.3s" }}>
-          <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6">4</div>
+        <div
+          class="bg-white p-8 rounded-lg shadow-md animate-on-scroll"
+          style={{ transitionDelay: "0.3s" }}
+        >
+          <div
+            class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold mb-6"
+          >
+            4
+          </div>
           <h3 class="text-xl font-bold mb-4">Optimize</h3>
           <p class="text-black">
-            We continuously measure results and refine our approach to ensure ongoing improvement.
+            We continuously measure results and refine our approach to ensure
+            ongoing improvement.
           </p>
         </div>
       </div>
@@ -204,12 +240,18 @@ const services = servicesData;
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto bg-gray-50 p-12 rounded-lg shadow-sm">
         <div class="flex flex-col md:flex-row items-center">
-          <div class="w-24 h-24 bg-gray-200 rounded-full mb-6 md:mb-0 md:mr-8"></div>
+          <div class="w-24 h-24 bg-gray-200 rounded-full mb-6 md:mb-0 md:mr-8">
+          </div>
           <div>
             <blockquote class="text-xl text-gray-900 italic mb-4">
-              "Overlook's comprehensive approach to sales team development has transformed our organization. Their expertise in hiring, training, and process optimization has led to a 45% increase in our sales within just eight months."
+              "Overlook's comprehensive approach to sales team development has
+              transformed our organization. Their expertise in hiring, training,
+              and process optimization has led to a 45% increase in our sales
+              within just eight months."
             </blockquote>
-            <cite class="text-gray-700 font-semibold">— Mazen Al Hajj, CEO of Circosoft</cite>
+            <cite class="text-gray-700 font-semibold"
+              >— Mazen Al Hajj, CEO of Circosoft</cite
+            >
           </div>
         </div>
       </div>
@@ -220,7 +262,9 @@ const services = servicesData;
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Sales Organization?</h2>
+        <h2 class="text-3xl font-bold mb-6">
+          Ready to Transform Your Sales Organization?
+        </h2>
         <p class="text-xl text-black mb-8">
           Let's discuss how our services can help you achieve your sales goals.
         </p>
@@ -237,18 +281,21 @@ const services = servicesData;
 
 <script>
   // Scroll animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+  document.addEventListener("DOMContentLoaded", () => {
+    const animateOnScroll = document.querySelectorAll(".animate-on-scroll");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animated");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    animateOnScroll.forEach(element => {
+    animateOnScroll.forEach((element) => {
       observer.observe(element);
     });
   });

@@ -204,53 +204,19 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // If we've passed all validation, forward to Netlify's form handling
-    const fetch = require("node-fetch");
+    // If we've passed all validation, return success
+    // We don't need to forward to Netlify's form handling since the form has the data-netlify="true" attribute
+    // The browser will handle the actual submission to Netlify's form endpoint
 
-    // Prepare the form data for Netlify's form handling
-    const netlifyFormData = new URLSearchParams();
+    console.log("Form submission validated successfully");
 
-    // Add all form fields
-    for (const [key, value] of Object.entries(formData)) {
-      // Skip our internal fields
-      if (key !== "_pageLoadTime") {
-        netlifyFormData.append(key, value);
-      }
-    }
-
-    // Make sure form-name is included
-    if (!netlifyFormData.has("form-name")) {
-      netlifyFormData.append("form-name", "contact");
-    }
-
-    try {
-      // Forward to Netlify's form handling endpoint
-      console.log("Forwarding validated submission to Netlify Forms");
-
-      // In production, we would make a request to Netlify's form endpoint
-      // However, this is challenging from a serverless function
-      // Instead, we'll record the submission in our logs and return success
-
-      console.log("Form submission validated successfully");
-      console.log("Form data:", Object.fromEntries(netlifyFormData));
-
-      return {
-        statusCode: 200,
-        body: JSON.stringify({
-          message: "Form submission successful!",
-          success: true,
-        }),
-      };
-    } catch (forwardError) {
-      console.error("Error forwarding to Netlify Forms:", forwardError);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({
-          message: "Error processing form submission",
-          success: false,
-        }),
-      };
-    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: "Form submission successful!",
+        success: true,
+      }),
+    };
   } catch (error) {
     console.error("Form submission error:", error);
     return {

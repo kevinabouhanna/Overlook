@@ -184,7 +184,7 @@ const ContactForm = () => {
       formDataObj.append('_pageLoadTime', pageLoadTime.toString());
     }
 
-    // Use our custom Netlify function for validation
+    // First validate with our custom Netlify function
     fetch('/.netlify/functions/form-submission', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -193,8 +193,30 @@ const ContactForm = () => {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
+          // If validation passes, submit the form directly to Netlify
+          // This uses Netlify's built-in form handling
+          const netlifyForm = document.createElement('form');
+          netlifyForm.method = 'POST';
+          netlifyForm.action = '/';
+          netlifyForm.setAttribute('data-netlify', 'true');
+          netlifyForm.setAttribute('name', 'contact');
+          netlifyForm.style.display = 'none';
+
+          // Add all form fields
+          for (const [key, value] of formDataObj.entries()) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            netlifyForm.appendChild(input);
+          }
+
+          // Add to document, submit, and remove
+          document.body.appendChild(netlifyForm);
+          netlifyForm.submit();
+
           // Show success toast
-          toast.success(data.message || 'Message sent successfully! We\'ll get back to you soon.', {
+          toast.success('Message sent successfully! We\'ll get back to you soon.', {
             duration: 5000,
             position: 'bottom-right',
           });
@@ -206,7 +228,7 @@ const ContactForm = () => {
           setFormStatus({
             submitted: true,
             error: false,
-            message: data.message || 'Message sent successfully! We\'ll get back to you soon.',
+            message: 'Message sent successfully! We\'ll get back to you soon.',
             submitting: false
           });
 

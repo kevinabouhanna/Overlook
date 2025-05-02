@@ -184,7 +184,7 @@ const ContactForm = () => {
       formDataObj.append('_pageLoadTime', pageLoadTime.toString());
     }
 
-    // Submit the form directly to Netlify using fetch
+    // Submit the form to Netlify's form handling endpoint
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -319,7 +319,7 @@ const ContactForm = () => {
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
         autoComplete="on"
-        netlify="true"
+        action="/contact"
       >
         {/* Netlify form requirements */}
         <input type="hidden" name="form-name" value="contact" />

@@ -1,4 +1,6 @@
 // Netlify function to handle form submissions with additional validation
+// This function only validates the form data and returns a success response
+// The actual form submission is handled by Netlify's built-in form handling
 const RATE_LIMIT_WINDOW = 3600000; // 1 hour in milliseconds
 const MAX_SUBMISSIONS_PER_WINDOW = 5; // Max 5 submissions per IP per hour
 

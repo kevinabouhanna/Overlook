@@ -184,37 +184,14 @@ const ContactForm = () => {
       formDataObj.append('_pageLoadTime', pageLoadTime.toString());
     }
 
-    // First validate with our custom Netlify function
-    fetch('/.netlify/functions/form-submission', {
+    // Submit the form directly to Netlify using fetch
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formDataObj).toString()
     })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          // If validation passes, submit the form directly to Netlify
-          // This uses Netlify's built-in form handling
-          const netlifyForm = document.createElement('form');
-          netlifyForm.method = 'POST';
-          netlifyForm.action = '/';
-          netlifyForm.setAttribute('data-netlify', 'true');
-          netlifyForm.setAttribute('name', 'contact');
-          netlifyForm.style.display = 'none';
-
-          // Add all form fields
-          for (const [key, value] of formDataObj.entries()) {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = value;
-            netlifyForm.appendChild(input);
-          }
-
-          // Add to document, submit, and remove
-          document.body.appendChild(netlifyForm);
-          netlifyForm.submit();
-
+      .then(response => {
+        if (response.ok) {
           // Show success toast
           toast.success('Message sent successfully! We\'ll get back to you soon.', {
             duration: 5000,
@@ -241,21 +218,7 @@ const ContactForm = () => {
             message: ''
           });
         } else {
-          // Show error toast with the specific message from the server
-          toast.error(data.message || 'There was a problem sending your message. Please try again.', {
-            duration: 5000,
-            position: 'bottom-right',
-          });
-
-          console.error('Form submission error:', data);
-
-          // Update form status
-          setFormStatus({
-            submitted: false,
-            error: true,
-            message: data.message || 'There was a problem sending your message. Please try again.',
-            submitting: false
-          });
+          throw new Error('Form submission failed');
         }
       })
       .catch((error) => {

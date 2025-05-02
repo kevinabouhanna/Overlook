@@ -1,17 +1,16 @@
 ---
 // Import styles
 // global.css contains Tailwind directives and CSS variables
-import '../styles/global.css';
+import "../styles/global.css";
 // utilities.css contains all custom utility classes
-import '../styles/utilities.css';
+import "../styles/utilities.css";
 // colors.css contains custom color classes
-import '../styles/colors.css';
+import "../styles/colors.css";
 
 // Import components
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import { Toaster } from '../components/ui/toaster.jsx';
-
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { Toaster } from "../components/ui/toaster.jsx";
 
 // Define props
 export interface Props {
@@ -23,11 +22,11 @@ export interface Props {
 const {
   title = "Overlook - Sales Consultancy and Hiring in Lebanon",
   description = "Overlook - Sales Consultancy and Hiring in Lebanon",
-  ogImage = "https://via.placeholder.com/1200x630"
+  ogImage = "https://via.placeholder.com/1200x630",
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -46,13 +45,29 @@ const {
     <meta name="twitter:site" content="@abouhanna" />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+    <link
+      rel="canonical"
+      href={new URL(Astro.url.pathname, Astro.site).toString()}
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
 
     <!-- Google Fonts: Belanosima for logo -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap&text=Overlook&display=swap"
+      rel="stylesheet"
+    />
 
     <slot name="head" />
   </head>

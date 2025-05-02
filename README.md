@@ -172,7 +172,7 @@ This site is deployed on Netlify with the following configuration:
 - Dev Features:
   - Use Partytown for GTM + Hotjar integration (helps with multithreading)
     - Use simple cookie consent [Repo](https://github.com/orestbida/cookieconsent), with Cookie preferences in the footer
-  - Setup Decap CMS with admin authentication to edit testimonials
+  - Setup Contentful with admin authentication to edit testimonials
   - Move component-specific styles to their components
     - Move SVGs to assets, don't add SVG in the html, import it instead
   - Add primary, secondary and tertiary to colors

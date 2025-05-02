@@ -36,6 +36,9 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 │       ├── colors.css   # Color-specific styles
 │       └── utilities.css # Custom utility classes
 ├── netlify.toml         # Netlify configuration (redirects, headers, build settings)
+├── netlify/
+│   └── functions/      # Netlify serverless functions
+│       └── form-handler.js # Additional form spam protection
 └── package.json
 ```
 
@@ -145,13 +148,14 @@ This site is deployed on Netlify with the following configuration:
 
 - Replace stock images with compressed JPGs or Webp
 - Update meta image, favicon and logo (Brand Identity)
-- Integrate Netlify's contact form submissions (Accessibility)
+- ✅ Integrate Netlify's contact form submissions with spam protection
 
-  - Test form submissions on production with an email
+  - ✅ Added reCAPTCHA and enhanced honeypot field
+  - ✅ Added serverless function for additional spam filtering
 
 - Features:
 
-  - Contact form netlify setup
+  - ✅ Contact form netlify setup with spam protection
   - AI Chat bot, strictly on business topic
   - Add WhatsApp button
   - Add dark mode support

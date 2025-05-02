@@ -179,14 +179,17 @@ const ContactForm = () => {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
         autoComplete="on"
       >
         {/* Netlify form requirements */}
         <input type="hidden" name="form-name" value="contact" />
-        <div className="hidden">
+
+        {/* Honeypot field - hidden from humans but visible to bots */}
+        <div className="hidden" style={{ display: 'none', visibility: 'hidden', position: 'absolute', left: '-9999px' }}>
           <label>
-            Don't fill this out if you're human: <input name="bot-field" />
+            Don't fill this out if you're human: <input name="bot-field" tabIndex="-1" />
           </label>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -267,6 +270,9 @@ const ContactForm = () => {
             autoComplete="off"
           ></textarea>
         </div>
+
+        {/* Netlify reCAPTCHA */}
+        <div data-netlify-recaptcha="true" className="mb-4"></div>
 
         <div>
           <Button

@@ -21,8 +21,14 @@ const ContactForm = () => {
   const [isDevelopment, setIsDevelopment] = useState(false);
   const [devNoticeVisible, setDevNoticeVisible] = useState(false);
 
+  // Store page load time for bot detection
+  const [pageLoadTime, setPageLoadTime] = useState(null);
+
   // Initialize form and handle environment detection
   useEffect(() => {
+    // Record page load time for bot detection
+    setPageLoadTime(Date.now());
+
     // Now that we're in the browser, we can safely check the hostname
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     setIsDevelopment(isLocalhost);
@@ -50,7 +56,35 @@ const ContactForm = () => {
             recaptchaDiv.innerHTML = '<p class="text-sm text-amber-500 mt-2">reCAPTCHA is not available in local development. It will appear on the deployed site.</p>';
           } else {
             console.log('reCAPTCHA failed to load on production site, adding fallback message');
-            recaptchaDiv.innerHTML += '<p class="text-sm text-red-500 mt-2">If you don\'t see a CAPTCHA here, please refresh the page or try a different browser.</p>';
+            // Create a more user-friendly message with a checkbox alternative
+            recaptchaDiv.innerHTML = `
+              <div class="border border-gray-200 rounded-md p-4 bg-gray-50">
+                <p class="text-sm text-gray-700 mb-2">Please confirm you're not a robot by checking this box:</p>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" name="human-verification" class="w-5 h-5 text-black rounded focus:ring-black" />
+                  <span class="text-sm font-medium text-gray-700">I am not a robot</span>
+                </label>
+                <p class="text-xs text-gray-500 mt-2">Note: This is a fallback for when reCAPTCHA cannot load.</p>
+              </div>
+            `;
+
+            // Add event listener to the checkbox
+            setTimeout(() => {
+              const checkbox = recaptchaDiv.querySelector('input[type="checkbox"]');
+              if (checkbox) {
+                checkbox.addEventListener('change', function () {
+                  // Add a hidden field to the form to indicate human verification
+                  const form = document.querySelector('form[name="contact"]');
+                  if (form) {
+                    const hiddenField = document.createElement('input');
+                    hiddenField.type = 'hidden';
+                    hiddenField.name = 'g-recaptcha-response';
+                    hiddenField.value = 'fallback-human-verification';
+                    form.appendChild(hiddenField);
+                  }
+                });
+              }
+            }, 100);
           }
         }
       }, 3000);
@@ -135,39 +169,72 @@ const ContactForm = () => {
       return;
     }
 
-    // Standard Netlify Forms submission for production
-    // This uses the default Netlify form handling endpoint
-    fetch('/', {
+    // Check if we need to add the fallback verification
+    const recaptchaResponse = formDataObj.get('g-recaptcha-response');
+    if (!recaptchaResponse) {
+      // Check if the fallback checkbox is checked
+      const checkbox = document.querySelector('input[name="human-verification"]');
+      if (checkbox && checkbox.checked) {
+        formDataObj.append('g-recaptcha-response', 'fallback-human-verification');
+      }
+    }
+
+    // Add page load time for bot detection
+    if (pageLoadTime) {
+      formDataObj.append('_pageLoadTime', pageLoadTime.toString());
+    }
+
+    // Use our custom Netlify function for validation
+    fetch('/.netlify/functions/form-submission', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formDataObj).toString()
     })
-      .then(() => {
-        // Show success toast
-        toast.success('Message sent successfully! We\'ll get back to you soon.', {
-          duration: 5000,
-          position: 'bottom-right',
-        });
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Show success toast
+          toast.success(data.message || 'Message sent successfully! We\'ll get back to you soon.', {
+            duration: 5000,
+            position: 'bottom-right',
+          });
 
-        // Reset form
-        form.reset();
+          // Reset form
+          form.reset();
 
-        // Update form status
-        setFormStatus({
-          submitted: true,
-          error: false,
-          message: 'Message sent successfully! We\'ll get back to you soon.',
-          submitting: false
-        });
+          // Update form status
+          setFormStatus({
+            submitted: true,
+            error: false,
+            message: data.message || 'Message sent successfully! We\'ll get back to you soon.',
+            submitting: false
+          });
 
-        // Reset form state
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          company: '',
-          message: ''
-        });
+          // Reset form state
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            company: '',
+            message: ''
+          });
+        } else {
+          // Show error toast with the specific message from the server
+          toast.error(data.message || 'There was a problem sending your message. Please try again.', {
+            duration: 5000,
+            position: 'bottom-right',
+          });
+
+          console.error('Form submission error:', data);
+
+          // Update form status
+          setFormStatus({
+            submitted: false,
+            error: true,
+            message: data.message || 'There was a problem sending your message. Please try again.',
+            submitting: false
+          });
+        }
       })
       .catch((error) => {
         // Show error toast

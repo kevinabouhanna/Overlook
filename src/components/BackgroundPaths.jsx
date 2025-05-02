@@ -46,7 +46,7 @@ function FloatingPaths({ position }) {
 export default function BackgroundPaths({
   title = "Build. Trust. Hire.",
   subtitle = "We help businesses build trust in sales and hire the right people with confidence.",
-  primaryButtonText = "Our Services",
+  primaryButtonText = "Learn more",
   primaryButtonLink = "/services"
 }) {
   const words = title.split(" ")

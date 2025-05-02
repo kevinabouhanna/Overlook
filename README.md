@@ -38,7 +38,8 @@ A modern, SEO-optimized website for Overlook Sales Consulting built with Astro. 
 ├── netlify.toml         # Netlify configuration (redirects, headers, build settings)
 ├── netlify/
 │   └── functions/      # Netlify serverless functions
-│       └── form-handler.js # Additional form spam protection
+│       ├── form-handler.js # Basic spam protection
+│       └── form-submission.js # Advanced server-side form validation
 └── package.json
 ```
 
@@ -152,6 +153,7 @@ This site is deployed on Netlify with the following configuration:
 
   - ✅ Added reCAPTCHA and enhanced honeypot field
   - ✅ Added serverless function for additional spam filtering
+  - ✅ Implemented server-side validation with rate limiting and spam detection
 
 - Features:
 

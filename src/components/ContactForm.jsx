@@ -272,7 +272,7 @@ const ContactForm = () => {
         </div>
 
         {/* Netlify reCAPTCHA */}
-        <div data-netlify-recaptcha="true" className="mb-4"></div>
+        <div data-netlify-recaptcha="true" className="mb-4 g-recaptcha"></div>
 
         <div>
           <Button

@@ -18,10 +18,43 @@ const ContactForm = () => {
     submitting: false
   });
 
-  // We don't need to check for success parameter anymore since we're redirecting to a dedicated success page
-  // This useEffect can be used for other initialization if needed
+  const [isDevelopment, setIsDevelopment] = useState(false);
+  const [devNoticeVisible, setDevNoticeVisible] = useState(false);
+
+  // Initialize form and handle environment detection
   useEffect(() => {
-    // Any initialization code can go here
+    // Now that we're in the browser, we can safely check the hostname
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    setIsDevelopment(isLocalhost);
+
+    // Show development notice if needed
+    if (isLocalhost) {
+      setDevNoticeVisible(true);
+    }
+
+    // Force re-render of the reCAPTCHA if it didn't load properly
+    const recaptchaDiv = document.getElementById('netlify-recaptcha-container');
+    if (recaptchaDiv && !recaptchaDiv.innerHTML.trim()) {
+      console.log('Attempting to initialize reCAPTCHA...');
+      // This will trigger Netlify to re-initialize the reCAPTCHA
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = '<div data-netlify-recaptcha="true"></div>';
+      recaptchaDiv.innerHTML = tempDiv.firstChild.innerHTML;
+
+      // Add a fallback message if reCAPTCHA still doesn't load
+      setTimeout(() => {
+        if (!recaptchaDiv.querySelector('iframe')) {
+          // Check if we're in development mode
+          if (isLocalhost) {
+            console.log('reCAPTCHA not loading in development environment - this is normal');
+            recaptchaDiv.innerHTML = '<p class="text-sm text-amber-500 mt-2">reCAPTCHA is not available in local development. It will appear on the deployed site.</p>';
+          } else {
+            console.log('reCAPTCHA failed to load on production site, adding fallback message');
+            recaptchaDiv.innerHTML += '<p class="text-sm text-red-500 mt-2">If you don\'t see a CAPTCHA here, please refresh the page or try a different browser.</p>';
+          }
+        }
+      }, 3000);
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -46,6 +79,8 @@ const ContactForm = () => {
       return;
     }
 
+    // We already have the isDevelopment state from useEffect
+
     // Show submitting state
     setFormStatus({
       submitted: false,
@@ -56,13 +91,56 @@ const ContactForm = () => {
 
     // Get form data for submission
     const form = e.target;
+    const formDataObj = new FormData(form);
 
-    // Standard Netlify Forms submission
+    // Make sure the form-name field is included
+    if (!formDataObj.get('form-name')) {
+      formDataObj.append('form-name', 'contact');
+    }
+
+    // In development mode, simulate a successful submission
+    if (isDevelopment) {
+      console.log('Development mode - simulating form submission');
+      console.log('Form data:', Object.fromEntries(formDataObj));
+
+      // Simulate network delay
+      setTimeout(() => {
+        // Show success toast
+        toast.success('Development mode: Form submission simulated successfully!', {
+          duration: 5000,
+          position: 'bottom-right',
+        });
+
+        // Reset form
+        form.reset();
+
+        // Update form status
+        setFormStatus({
+          submitted: true,
+          error: false,
+          message: 'Development mode: Form submission simulated successfully! In production, this would be sent to Netlify.',
+          submitting: false
+        });
+
+        // Reset form state
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          message: ''
+        });
+      }, 1000);
+
+      return;
+    }
+
+    // Standard Netlify Forms submission for production
     // This uses the default Netlify form handling endpoint
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
+      body: new URLSearchParams(formDataObj).toString()
     })
       .then(() => {
         // Show success toast
@@ -159,6 +237,13 @@ const ContactForm = () => {
         </div>
       )}
 
+      {/* Development environment notice - only shown after client-side hydration */}
+      {devNoticeVisible && (
+        <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-md p-4 mb-6">
+          <p>⚠️ You are in development mode. Form submissions will not be processed by Netlify in this environment.</p>
+        </div>
+      )}
+
       {formStatus.submitted ? (
         <div className="bg-green-50 border border-green-200 text-green-800 rounded-md p-4 mb-6">
           <p>{formStatus.message}</p>
@@ -182,6 +267,7 @@ const ContactForm = () => {
         data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
         autoComplete="on"
+        netlify="true"
       >
         {/* Netlify form requirements */}
         <input type="hidden" name="form-name" value="contact" />
@@ -271,8 +357,13 @@ const ContactForm = () => {
           ></textarea>
         </div>
 
-        {/* Netlify reCAPTCHA */}
-        <div data-netlify-recaptcha="true" className="mb-4 g-recaptcha"></div>
+        {/* Netlify reCAPTCHA - this div will be replaced with the reCAPTCHA widget */}
+        <div className="form-group mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Verification <span className="text-red-500">*</span>
+          </label>
+          <div data-netlify-recaptcha="true" id="netlify-recaptcha-container"></div>
+        </div>
 
         <div>
           <Button
